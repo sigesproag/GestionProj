@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block title %} Detalles Proyecto{% endblock %}
+{%block content %}
+<center><strong><font face="Comic Sans MS"><h3> DETALLES DEL PROYECTO "{{ proyecto.nombrelargo }}" </h3></font></strong></center><br>
+{% if ver_proyectos or crear_proyectos or mod_proyectos or eliminar_proyectos or asignar_miembros or asignar_flujo or eliminar_miembro%}
+<form action="." method="POST">
+         {% csrf_token %}
+    <table class="table table-bordered">
+	      <thead>
+	        <tr>
+	             <th class="titulo"><b><strong><span style="color:#330099">NOMBRE</strong></b></th>
+	             <th class="titulo"><b><strong><span style="color:#330099">DESCRIPCION</strong></b></th>
+		     <th class="titulo"><b><strong><span style="color:#330099">FECHA INICIO</strong></b></th>
+		     <th class="titulo"><b><strong><span style="color:#330099">FECHA FIN</strong></b></th>
+		     <th class="titulo"><b><strong><span style="color:#330099">RESPONSABLE</strong></b></th>
+		     <th class="titulo"><b><strong><span style="color:#330099">HORAS</strong></b></th>
+		     <th class="titulo"><b><strong><span style="color:#330099">ESTADO</strong></b></th>
+	        </tr>
+	      </thead>
+              <tbody>
+		 <tr>
+		      
+                          <td><strong>{{proyecto.nombrelargo}}</strong></td>
+                          <td><strong>{{proyecto.descripcion}}</strong></td>
+		          <td><strong>{{proyecto.fecha_inicio}}</strong></td>
+			  <td><strong>{{proyecto.fecha_fin}}</strong></td>
+			  <td><strong>{{proyecto.usuario_lider}}</strong></td>
+			  <td><strong>{{proyecto.cantidad}}</strong></td>
+			  <td><strong>{{status}}</strong></td>
+	           </tr>
+		</tbody>
+	  </table>
+
+   </form>
+    <table class="table table-bordered">
+	      <thead>
+	        <tr>
+	             <th class="titulo"><b><strong><span style="color:#330099">USUARIO</span></strong></b></th>
+	             <th class="titulo"><b><strong><span style="color:#330099">ROL</span></strong></b></th>
+                 <th class="titulo"><b><strong><span style="color:#330099">ACCIONES</span></strong></b></th>
+	        </tr>
+	      </thead>
+              <tbody>
+         {%for miembro in miembros%}
+             <tr>
+
+                 <td><strong>{{miembro.usuario}}</strong></td>
+                 <td><strong>{{miembro.rol}}</strong></td>
+                 {%if miembro.rol.nombre == 'team leader'%}
+                 <td><a><strong> </strong></a></td>
+                 {%endif%}
+                 {%if eliminar_miembro and miembro.rol.nombre != 'team leader'%}
+                 <td><a class="btn btn-primary" href="/eliminarMiembro/del&id={{miembro.id}}/"><strong>ELIMINAR</strong></a></td>
+                 {% endif %}
+             </tr>
+
+         {% endfor %}
+		</tbody>
+	  </table>
+
+    <table class="table table-bordered">
+	      <thead>
+	        <tr>
+	             <th class="titulo"><b><strong><span style="color:#330099">FLUJO</strong></b></th>
+	             <th class="titulo"><b><strong><span style="color:#330099">DESCRIPCION</strong></b></th>
+	        </tr>
+	      </thead>
+              <tbody>
+         {%for flujo in flujos%}
+             <tr>
+                 <td><strong>{{flujo.nombre}}</strong></td>
+                 <td><strong>{{flujo.descripcion}}</strong></td>
+                 {%if asignar_actividades_proyecto%}
+                 <td><a class="btn btn-primary" href="/asignarActividadProy/flujo&id={{flujo.id}}&&proyecto&id={{proyecto.id}}/"><strong>ACTIVIDADES</strong></a></td>
+                 {% endif %}
+             </tr>
+         {% endfor %}
+		</tbody>
+	  </table>
+    <div class="alert alert-info">
+                <ul><h3>
+            <center><a class="btn btn-primary" href="/sprint/sprint&id={{proyecto.id}}/"><strong>ADMINISTRACION DE SPRINT</strong></a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="btn btn-primary" href="/userHistory/proyecto&id={{proyecto.id}}/"><strong>ADMINISTRAR USER HISTORY</strong></a>
+            </center> </ul></h3>
+   </div>
+
+
+   <div class="footer">
+           <div class="volver">
+		<th class="titulo"><b><strong><span style="color:#330099">ACCIONES</strong></b></th><br>
+		<td>
+			<!--{% if eliminar_proyecto %}-->
+                      <!--<a class="btn btn-primary" href="/eliminarProyecto/del&id={{proyecto.id}}/"><strong>ELIMINAR</strong></a>-->
+			<!--{% endif %}			-->
+			{% if mod_proyecto %}
+				<a class="btn btn-primary" href="/modificarProyecto/mod&id={{proyecto.id}}/"><strong>MODIFICAR</strong></a>
+			{% endif %}
+			{% if asignar_miembros%}
+			<a class="btn btn-primary" href="/asignarMiembro/proyecto&id={{proyecto.id}}/"><strong>ASIGNAR MIEMBROS</strong></a>
+			{% endif %}
+            {% if asignar_flujo%}
+			<a class="btn btn-primary" href="/asignarFlujo/proyecto&id={{proyecto.id}}/"><strong>ASIGNAR FLUJO</strong></a>
+			{% endif %}
+			   </td><br><br>
+               <a class="btn btn-primary" href="/proyectos"><strong> VOLVER </strong> </a>&nbsp;&nbsp;
+           </div>
+     </div>
+{% else %}
+	<center><p><strong>NO TINES PERMISOS</strong></p></center>
+{% endif %}
+{% endblock %}

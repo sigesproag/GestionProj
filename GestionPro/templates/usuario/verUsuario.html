@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %} Usuario{% endblock %}
+{%block content %}
+<center><strong><font face="Comic Sans MS"><h3> DETALLES DEL USUARIO "{{ usuario.username }}" </h3></font></strong></center><br>
+{% if ver_usuarios or crear_usuario or mod_usuario or eliminar_usuario or asignar_rol%}
+<form action="." method="POST">
+         {% csrf_token %}
+
+<table class="table table-bordered">
+	      <thead>
+	        <tr>
+		     <th class="titulo"><b><strong><span style="color:#330099">USUARIO</strong></b></th>
+	             <th class="titulo"><b><strong><span style="color:#330099">NOMBRE</strong></b></th>
+	             <th class="titulo"><b><strong><span style="color:#330099">APELLIDO</strong></b></th>
+		     <th class="titulo"><b><strong><span style="color:#330099">EMAIL</strong></b></th>
+                     <th class="titulo"><b><strong><span style="color:#330099">FECHA DE CREACION</strong></b></th>
+		     <th class="titulo"><b><strong><span style="color:#330099">FECHA DE ULTIMO LOGIN</strong></b></th>
+		     <th class="titulo"><b><strong><span style="color:#330099">ESTADO</strong></b></th>
+	        </tr>
+	      </thead>
+              <tbody>
+		 <tr>
+                          <td><strong>{{usuario.username}}</strong></td>
+                          <td><strong>{{usuario.first_name}}</strong></td>
+		          <td><strong>{{usuario.last_name}}</strong></td>
+			  <td><strong>{{usuario.email}}</strong></td>
+			  <td><strong>{{usuario.date_joined}}</strong></td>
+			  <td><strong>{{usuario.last_login}}</strong></td>
+                          <td><strong>{{usuario.is_active}}</strong></td>
+	           </tr>
+		</tbody>
+	  </table>
+   </form>
+<th class="titulo"><b><strong><span style="color:#330099">ACCIONES</strong></b></th><br>
+{% ifequal usuario.id 1 %}
+		          <td><strong>Usuario con todos los permisos</strong></td>
+		       {% else %}
+		          {% ifnotequal usuario.username user.username %}
+		             <td>
+                         {% ifequal usuario.is_active True %}
+				{% if eliminar_usuario %}
+                                <a class="btn btn-primary" href="/eliminar/eli&id={{usuario.id}}"><strong>ELIMINAR</strong></a>
+				{% endif %}				
+				{% if mod_usuario %}
+				<a class="btn btn-primary" href="/modificar/mod&id={{usuario.id}}"><strong>MODIFICAR</strong></a>
+                         {% endif %}
+                                <a class="btn btn-primary" href="/asignarRol/rol&id={{usuario.id}}"><strong>ASIGNAR ROL SISTEMA</strong></a>
+                         {% else %}
+                         <a class="btn btn-primary" href="/activar/act&id={{usuario.id}}"><strong>ACTIVAR</strong></a>
+			        {% endifequal %}
+                     </td>
+		          {% endifnotequal %}
+		       {% endifequal %}
+   <div class="footer">
+           <div class="volver">
+                <br><a class="btn btn-primary" href="/admin"><strong> VOLVER A LA PAGINA ANTERIOR</strong> </a>&nbsp;&nbsp;
+           </div>
+     </div>
+{% else %}
+	<br><center><p><strong>NO POSEE PERMISOS</strong></p><center>
+{% endif %}
+{% endblock%}
