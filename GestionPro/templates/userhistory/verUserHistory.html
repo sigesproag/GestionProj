@@ -1,6 +1,7 @@
-{% extends 'base.html' %}
-{% block title %} Detalles Flujo{% endblock %}
-{%block content %}
+{% extends "base.html" %}
+{% block title %} Detalles de Flujo {% endblock %}
+{% block titulo %} Detalles de Flujo {% endblock %}
+{% block cuerpo %}
 <center><strong><font face="Comic Sans MS"><h3> DETALLES DEL USER HISTORY "{{ flujos.nombre }}" </h3></font></strong></center><br>
 {% if ver_user_history or mod_user_history or eliminar_user_history %}
 <form action="." method="POST">

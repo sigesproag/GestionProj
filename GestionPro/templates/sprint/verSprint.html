@@ -1,6 +1,7 @@
-{% extends 'base.html' %}
-{% block title %} Detalles SPRINT{% endblock %}
-{%block content %}
+{% extends "base.html" %}
+{% block title %} Detalles Sprint {% endblock %}
+{% block titulo %} Detalles Sprint {% endblock %}
+{% block cuerpo %}
 <center><strong><font face="Comic Sans MS"><h3> DETALLES DEL SPRINT "{{ sprint.nombre }}" </h3></font></strong></center><br>
 {% if ver_sprint or mod_sprint or eliminar_sprint %}
 <form action="." method="POST">

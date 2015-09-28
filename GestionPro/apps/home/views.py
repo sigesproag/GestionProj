@@ -8,7 +8,7 @@ from GestionPro.apps.home.forms import RecuperarContrasenaForm
 from django.core.mail import EmailMultiAlternatives  # Enviamos HTML
 from django.contrib.auth.models import User
 import django
-from GestionPro.settings import URL_LOGIN
+from GestionPro.settings import LOGIN_URL
 from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponseRedirect, HttpResponse
 # Paginacion en Django

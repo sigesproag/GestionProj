@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Usuarios{% endblock %}
-{% block content %}
+{% block title %}Usuarios{% endblock title %}
+{% block titulo %}Usuarios{% endblock titulo %}
+{% block cuerpo %}
 <center><strong><font face="Comic Sans MS"><h3> ADMINISTRACIÓN DE USUARIOS</h3></font></strong></center>
 <center><strong><font face="Comic Sans MS"><span style="color:#6666FF"><h3> LISTA DE USUARIOS</h3></font></strong></center> 
 {% if ver_usuarios or crear_usuario %}
@@ -59,4 +60,4 @@
 {% else %}
 	<br><center><p><strong>NO POSEE PERMISOS</strong></p><center>
 {% endif %}
-{% endblock%}
+{% endblock cuerpo%}

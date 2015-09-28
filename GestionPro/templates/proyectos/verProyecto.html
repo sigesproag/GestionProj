@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %} Detalles Proyecto{% endblock %}
-{%block content %}
+{% block titulo %} Detalles Proyecto{% endblock %}
+{%block cuerpo %}
 <center><strong><font face="Comic Sans MS"><h3> DETALLES DEL PROYECTO "{{ proyecto.nombrelargo }}" </h3></font></strong></center><br>
 {% if ver_proyectos or crear_proyectos or mod_proyectos or eliminar_proyectos or asignar_miembros or asignar_flujo or eliminar_miembro%}
 <form action="." method="POST">

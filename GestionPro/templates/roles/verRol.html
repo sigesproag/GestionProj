@@ -1,6 +1,7 @@
-{% extends 'base.html' %}
-{% block title %} Detalles Rol{% endblock %}
-{%block content %}
+{% extends "base.html" %}
+{% block title %} Detalles Rol {% endblock %}
+{% block titulo %} Detalles Rol {% endblock %}
+{% block cuerpo %}
 {%ifequal roles.categoria 1 %}
 <center><strong><font face="Comic Sans MS"><h3> DETALLES DEL ROL DEL SISTEMA "{{ roles.nombre }}" </h3></font></strong></center><br>
 {% else %}

@@ -1,84 +1,125 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <title>SGPA</title>
-    <!-- Le styles -->
-    <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet">
-     <link href="/media/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <script src="/media/js/jquery.js"></script>
-    <script src="/media/js/jquery.form.min.js"></script>
-    <script src="/media/js/SGPA.js"></script>
-    <script src="/media/bootstrap/js/bootstrap.js"></script>
-    <link href="/media/calendario_dw/calendario_dw-estilos.css" type="text/css" rel="STYLESHEET">
-    <script type="text/javascript" src="/media/calendario_dw/jquery-1.4.4.min.js"></script>
-    <script type="text/javascript" src="/media/calendario_dw/calendario_dw.js"></script> 
-    <script type="text/javascript">
-       $(document).ready(function(){
-       $(".campofecha").calendarioDW();
-       })
-</script> 
-    <style type="text/css">
-      body {
-	background-color: #330099;
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-	    <p class="navbar-text pull-left">
-            <div class="container-fluid">
-                <strong><a class="brand" href= '/'><span style="color:#FFFFFF"></span> Inicio </a></strong>
-                    {% if user.is_authenticated %}
-		             <p class="navbar-text pull-right">
-		                <strong>Usted ha ingresado como, "{{ user.username }}" |
-		                    <a href='/logout'><span style="color:#FFFFFF">Cerrar </span></a> |
-			                <a href='/cambiarcontrasena'><span style="color:#FFFFFF">Cambiar Contraseña</span></a> |</strong>
-		            </p>
-                     <ul class="nav">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% load staticfiles %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title%}Inicio{% endblock %}</title>
+<meta name="keywords" content="VOIP Company, css template, free web design layout" />
+<meta name="description" content="VOIP Company, css template, free web design layout from TemplateMo.com" />
+<link href="{% static 'menu/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{% static 'menu/tabcontent.css' %}" />
+<script type="text/javascript" src="{% static 'menu/tabcontent.js' %}">
+/***********************************************
+* Tab Content script v2.2- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+</script>
 
-                        <li><a href='/admin'><span style="color:#FFFFFF">Administración de Usuarios</span></a></li>
+</head>
+<div id="templatemo_wrapper">
+<div id="templatemo_container">
+	<!--  Free CSS Template is provided by www.TemplateMo.com  -->
+    <div id="templatemo_menu">
+        <div id="pettabs" class="indentmenu">
+            <ul>
+                  <li><a href="#" rel="tab1" class="selected">Inicio</a></li>
+                  <li><a href='/admin' rel="tab2">Administrar Usuario</a></li>
+                  <li><a href='/roles' rel="tab3">Administrar Roles</a></li>
+                  <li><a href="#" rel="tab4">Cuenta</a></li>
+                  <li><a href="#" rel="tab5">About Us</a></li>
+                  <li><a href="#" rel="tab6" style="border-right: none;">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="tabcontentstyle">
+            {% block titulo %}
+                <div id="tab1" class="tabcontent">
+                    Bienvenido al Gestor de Proyectos
+                </div>
+            {% endblock titulo %}
 
-                        <li><a href='/roles'><span style="color:#FFFFFF">Administracion de Roles</span></a></li>
+            <div id="tab2" class="tabcontent">
+            	<ul>
+                    <li><a href="#">Crear Usuario</a></li>
+                    <li><a href="#">Listar Usuarios</a></li>
+                </ul>
+            </div>
 
-                         <li><a href='/proyectos'><span style="color:#FFFFFF">Administracion de Proyectos</span></a></li>
+            <div id="tab3" class="tabcontent">
+            	<ul>
+                </ul>
+            </div>
 
-                         <li><a href='/flujos'><span style="color:#FFFFFF">Administracion de Flujos</span></a></li>
+            <div id="tab4" class="tabcontent">
+            	<ul>
+                    <li><a href="#">Cerrar Sesion</a></li>
+                    <li><a href="#">Cambiar Contraseña</a></li>
+                </ul>
+            </div>
 
-                        <li><a href='/actividades'><span style="color:#FFFFFF">Administracion de Actividades</span></a></li>
+        </div>
+<script type="text/javascript">
 
-		            {% else %}
-	                <p class="navbar-text pull-right">
-		                <strong><a href='/login'><span style="color:#FFFFFF">Iniciar</span></a></strong>
-		            </p>
-		            {% endif %}
-                         </ul>
-      </div>
-      </div>
+        var mypets=new ddtabcontent("pettabs")
+        mypets.setpersist(true)
+        mypets.setselectedClassTarget("link")
+        mypets.init(false)
+</script>
+
+    </div> <!-- end of menu -->
+    <div>
+        <img src="{% static 'menu/images/templatemo_banner_bg.jpg' %}" alt="image"/>
     </div>
-    
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span13">
-          <div class="hero-unit">
-            {% block content %}
-            {% endblock%}
-          </div>
-        </div><!--/span-->
-      </div><!--/row-->
-      <hr>
-      <footer><span style="color:#FFFFFF">
-        <strong><P ALIGN=right>&copy; SGPA - 2015. Versión Django: {{django_version}}</P></strong>
-      </span></footer>
-    </div><!--/.fluid-container-->
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  </body>
+    {% block cuerpo %}
+	<div id="templatemo_content">
+    	<div id="content_top"></div>
+
+        <div class="templatemo_content_section_01">
+        	<div class="section_01_left">
+                {% if user.is_authenticated %}
+                    <h1>Bienvenido, {{ user.username }} a Gestion Proyecto.</h1>
+                {% else %}
+                    <h1>Debe iniciar sesión para usar Gestion Proyecto</h1>
+                {% endif %}
+          	  <img src="{% static 'menu/images/templatemo_image_01.jpg' %}" alt="image"/>
+			</div>
+
+            <div class="section_01_right">
+            </div>
+
+            <div class="cleaner">&nbsp;</div>
+		</div>
+
+        <div class="templatemo_content_section_02">
+
+            <div class="section_02_subsection">
+                <ul>
+                </ul>
+            </div>
+
+
+            <div class="section_02_subsection">
+                <ul>
+                </ul>
+            </div>
+
+ 			<div class="section_02_subsection" style="border-right: none;">
+                <div style="clear: both; margin-top: 30px;">
+
+				</div>
+            </div>
+
+            <div class="cleaner">&nbsp;</div>
+		</div>
+    </div>
+    {% endblock cuerpo %}
+
+    <div id="templatemo_footer">
+
+        	<p>Copyright © 2015 <a href="#"><strong>SIGESPRO</strong></a></p>
+	</div> <!-- end of footer -->
+	<!--  Free CSS Templates from www.TemplateMo.com  -->
+</div>
+</div>
+</body>
 </html>

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Roles{% endblock %}
-{% block content %}
+{% block titulo %}Roles{% endblock %}
+{% block cuerpo %}
 {% ifequal roles.categoria 1 %}
 <center><strong><font face="Comic Sans MS"><h3> ASIGNAR PERMISOS A LOS ROLES DEL SISTEMA "{{ roles.nombre }}"</h3></font></strong></center><br>
 {% else %}

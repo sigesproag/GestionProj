@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %} Usuario{% endblock %}
-{%block content %}
+{% block titulo %} Usuario{% endblock %}
+{%block cuerpo %}
 <center><strong><font face="Comic Sans MS"><h3> DETALLES DEL USUARIO "{{ usuario.username }}" </h3></font></strong></center><br>
 {% if ver_usuarios or crear_usuario or mod_usuario or eliminar_usuario or asignar_rol%}
 <form action="." method="POST">

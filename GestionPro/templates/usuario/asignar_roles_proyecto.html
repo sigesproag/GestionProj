@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Usuarios{% endblock %}
-{% block content %}
+{% block titulo %}Usuarios{% endblock %}
+{% block cuerpo %}
 <center><strong><font face="Comic Sans MS"><h2> ASIGNAR ROLES DE PROYECTO A USUARIO "{{ usuario.username }}"</h2></font></strong></center>
 {% if asignar_rol %}
    {% if mensaje %}
@@ -11,7 +12,7 @@
       {% endautoescape %}
 	 <center><input type="button" class= "btn btn-primary" value="VOLVER" onClick = "location.href='/visualizar/ver&id={{usuario.id}}/' "/></center>
    {% else %}
-   <center>
+   <br>
       <table class="abm">
              <form id="form_id" action="." method="POST">
                    {% csrf_token %}
@@ -19,8 +20,8 @@
 		   <tr>
 			<td colspan="2" class="buttonlist">
                             <br><input type="submit" class= "btn btn-primary" value="GUARDAR" />&nbsp;&nbsp;
-			    <input type="button" class= "btn btn-primary" value="CANCELAR" onClick = "location.href='/visualizar/ver&id={{usuario.id}}/' "/></center>
-                        </td>
+			    <input type="button" class= "btn btn-primary" value="CANCELAR" onClick = "location.href='/visualizar/ver&id={{usuario.id}}/' "/></br>
+            </td>
 		   </tr>
 	     </form>
       </table>

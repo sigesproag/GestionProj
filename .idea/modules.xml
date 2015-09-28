@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/Escritorio/gg/GestionPro/.idea/GestionPro.iml" filepath="$USER_HOME$/Escritorio/gg/GestionPro/.idea/GestionPro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GestionProj.iml" filepath="$PROJECT_DIR$/.idea/GestionProj.iml" />
     </modules>
   </component>
 </project>

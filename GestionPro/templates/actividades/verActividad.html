@@ -1,6 +1,7 @@
-{% extends 'base.html' %}
-{% block title %} Detalles Actividad{% endblock %}
-{%block content %}
+{% extends "base.html" %}
+{% block title %} Detalles de actividad {% endblock %}
+{% block titulo %} Detalles de actividad {% endblock %}
+{% block cuerpo %}
 <center><strong><font face="Comic Sans MS"><h3> DETALLES DE LA ACTIVIDAD "{{ actividades.nombre }}" </h3></font></strong></center><br>
 {% if ver_actividades or mod_actividad or eliminar_actividad %}
 <form action="." method="POST">

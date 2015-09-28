@@ -1,5 +1,5 @@
 """
-Django settings for SGPA project.
+Django settings for GestionPro project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -10,9 +10,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
-PATH = '/var/www/repois2'
+PATH = '/var/www/GestionProj'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
@@ -62,7 +62,7 @@ WSGI_APPLICATION = 'GestionPro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'SGPA_db',
+        'NAME': 'GestionProj',
 	    'USER': 'admin',
 	    'PASSWORD': 'admin',
 	    'HOST': 'localhost',
@@ -96,14 +96,18 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
-MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__),'media/'))
+STATIC_ROOT = ''
+MEDIA_ROOT = os.path.join(BASE_DIR, 'carga')
+#MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__),'media/'))
 MEDIA_URL = '/media/'
+
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(
+        os.path.dirname(__file__),
+        'static/',
+    ),
 )
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -127,12 +131,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     )
 
 AUTH_PROFILE_MODULE = 'home.userProfile'
+
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__),'templates'),
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(BASE_DIR, 'templates'),
 )
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -160,9 +163,9 @@ LOGGING = {
 # Configuracion del correo
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'soporte.sgpa@gmail.com'
-EMAIL_HOST_PASSWORD = 'sgpa2015'
+EMAIL_HOST_USER = 'sigesproag@gmail.com'
+EMAIL_HOST_PASSWORD = 'ingeii2015'
 EMAIL_PORT = 587
 
 
-URL_LOGIN = '/login/'
+LOGIN_URL = '/login/'

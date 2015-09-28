@@ -7,7 +7,7 @@ from GestionPro.apps.usuario.forms import UsuariosForm
 from django.core.mail import EmailMultiAlternatives # Enviamos HTML
 from django.contrib.auth.models import User
 import django
-from GestionPro.settings import URL_LOGIN
+from GestionPro.settings import LOGIN_URL
 from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 # Paginacion en Django
