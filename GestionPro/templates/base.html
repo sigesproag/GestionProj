@@ -18,17 +18,30 @@
 
 </head>
 <div id="templatemo_wrapper">
+
 <div id="templatemo_container">
-	<!--  Free CSS Template is provided by www.TemplateMo.com  -->
+            <strong><a class="brand" href= '/'><span style="color:#FFFFFF"></span> Inicio </a></strong>
+                    {% if user.is_authenticated %}
+		             <p class="navbar-text pull-right">
+		                <strong>Se ha registrado como, "{{ user.username }}" |
+		                    <a href='/logout'><span style="color:#FFFFFF">Cerrar </span></a> |
+                            <a href='/cambiarcontrasena'><span style="color:#FFFFFF">Modificar Contraseña</span></a> |
+                        </strong>
+
+
+     <!--<li><a href="/"><strong><span style="color:#FFFFFF"></span>Inicio</strong>&nbsp;&nbsp;</a></li>
+	  Free CSS Template is provided by www.TemplateMo.com  -->
     <div id="templatemo_menu">
+
         <div id="pettabs" class="indentmenu">
             <ul>
-                  <li><a href="#" rel="tab1" class="selected">Inicio</a></li>
-                  <li><a href='/admin' rel="tab2">Administrar Usuario</a></li>
-                  <li><a href='/roles' rel="tab3">Administrar Roles</a></li>
-                  <li><a href="#" rel="tab4">Cuenta</a></li>
-                  <li><a href="#" rel="tab5">About Us</a></li>
-                  <li><a href="#" rel="tab6" style="border-right: none;">Contact Us</a></li>
+
+                  <li><a href='/admin' rel="tab1">Administrar Usuario</a></li>
+                  <li><a href='/roles' rel="tab2">Administrar Roles</a></li>
+                  <li><a href='/flujos' rel="tab3">Administrar Flujo</a></li>
+                  <li><a href='/actividades' rel="tab4">Administrar Actividades</a></li>
+                  <li><a href='/proyectos' rel="tab5" style="border-right: none;">Administrar Proyectos</a></li>
+                  <!--<li><a href='/sprint' rel="tab6" style="border-right: none;"> Administrar Sprint </a></li>-->
             </ul>
         </div>
         <div class="tabcontentstyle">
@@ -70,11 +83,18 @@
     <div>
         <img src="{% static 'menu/images/templatemo_banner_bg.jpg' %}" alt="image"/>
     </div>
+    {% else %}
+	                <p class="navbar-text pull-right">
+		                <strong><a href='/login'><span style="color:#FFFFFF">Iniciar</span></a></strong>
+		            </p>
+		            {% endif %}
+                         </ul>
     {% block cuerpo %}
 	<div id="templatemo_content">
     	<div id="content_top"></div>
+<!--
 
-        <div class="templatemo_content_section_01">
+        &lt;!&ndash;<div class="templatemo_content_section_01">
         	<div class="section_01_left">
                 {% if user.is_authenticated %}
                     <h1>Bienvenido, {{ user.username }} a Gestion Proyecto.</h1>
@@ -82,7 +102,7 @@
                     <h1>Debe iniciar sesión para usar Gestion Proyecto</h1>
                 {% endif %}
           	  <img src="{% static 'menu/images/templatemo_image_01.jpg' %}" alt="image"/>
-			</div>
+			</div>&ndash;&gt;
 
             <div class="section_01_right">
             </div>
@@ -102,6 +122,7 @@
                 <ul>
                 </ul>
             </div>
+-->
 
  			<div class="section_02_subsection" style="border-right: none;">
                 <div style="clear: both; margin-top: 30px;">
@@ -116,8 +137,12 @@
 
     <div id="templatemo_footer">
 
-        	<p>Copyright © 2015 <a href="#"><strong>SIGESPRO</strong></a></p>
-	</div> <!-- end of footer -->
+        	<!--<p>Copyright © 2015 <a href="  "><strong>SIGESPRO</strong></a></p>-->
+            <footer><span style="">
+        <strong><P ALIGN=right>&copy;Copyright- SIGESPRO-2015. Versión Django:{{django_version}}</P></strong>
+        </span></footer>
+	</div>  <!-- end of footer
+
 	<!--  Free CSS Templates from www.TemplateMo.com  -->
 </div>
 </div>
