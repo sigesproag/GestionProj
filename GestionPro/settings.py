@@ -48,6 +48,11 @@ INSTALLED_APPS = (
     'GestionPro.apps.home',
     'GestionPro.apps.usuario',
     'GestionPro.apps.flujo',
+    'GestionPro.apps.actividades',
+    'GestionPro.apps.proyectos',
+    'GestionPro.apps.roles',
+    'GestionPro.apps.sprint',
+    'GestionPro.apps.userhistory',
 
 )
 
