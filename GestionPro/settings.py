@@ -22,10 +22,17 @@ SECRET_KEY = 'dbf)s31xx!ruxlaw+b*$)#!6tuc^=jmss^=a$*(*sp64n&@9%v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = DEBUG
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+
+DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False,}
+
+INTERNAL_IPS = ('127.0.0.1','::1',)
 
 # Application definition
 
@@ -37,11 +44,15 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admindocs',
+    'debug_toolbar',
     'GestionPro.apps.home',
     'GestionPro.apps.usuario',
+    'GestionPro.apps.flujo',
+
 )
 
 MIDDLEWARE_CLASSES = (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',

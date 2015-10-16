@@ -48,7 +48,7 @@ class Rol(models.Model):
     nombre = models.CharField(unique=True, max_length=50)
     categoria = models.IntegerField(max_length=1, choices=CATEGORY_CHOICES)
     descripcion = models.TextField(null=True, blank=True)
-    fecHor_creacion = models.DateTimeField(auto_now=False, auto_now_add=True, null=True, blank=True, editable=False)
+    fecha_creacion = models.DateTimeField(auto_now=False, auto_now_add=True, null=True, blank=True, editable=False)
     usuario_creador = models.ForeignKey(User, null=True)
     permisos = models.ManyToManyField(Permiso, through='RolPermiso')
 
@@ -72,7 +72,7 @@ class Flujo(models.Model):
     """Esta clase representa el flujo para proyecto"""
     nombre = models.CharField(unique=True, max_length=50)
     descripcion = models.TextField(null=True, blank=True)
-    fecHor_creacion = models.DateTimeField(auto_now=False, auto_now_add=True, null=True, blank=True, editable=False)
+    fecha_creacion = models.DateTimeField(auto_now=False, auto_now_add=True, null=True, blank=True, editable=False)
     usuario_creador = models.ForeignKey(User, null=True)
     #proyecto= models.IntegerField()
 
@@ -133,7 +133,7 @@ class Actividad(models.Model):
     """Esta clase representa las actividades"""
     nombre = models.CharField(unique=True, max_length=50)
     descripcion = models.TextField(null=True, blank=True)
-    fecHor_creacion = models.DateTimeField(auto_now=False, auto_now_add=True, null=True, blank=True, editable=False)
+    fecha_creacion = models.DateTimeField(auto_now=False, auto_now_add=True, null=True, blank=True, editable=False)
     usuario_creador = models.ForeignKey(User, null=True)
     #proyecto= models.IntegerField()
 
@@ -187,7 +187,7 @@ class Historia(models.Model):
     Clase que representa el Historial de User Storie
     """
     descripcion = models.CharField(max_length=500)
-    fecHor_creacion = models.DateTimeField(auto_now=False, auto_now_add=True, null=True, blank=True, editable=False)
+    fecha_creacion = models.DateTimeField(auto_now=False, auto_now_add=True, null=True, blank=True, editable=False)
     userhistory = models.ForeignKey(UserHistory)
 
     def __unicode__(self):

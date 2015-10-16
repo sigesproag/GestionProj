@@ -3,11 +3,11 @@
 	width: 958px;
 	height: 125px;
 	padding: 0 1px;
-	background: url(images/templatemo_top_panel_bg.jpg) no-repeat;
+	/*background: url(images/templatemo_top_panel_bg.jpg) no-repeat;*/
 }
 
 .indentmenu{
-	font: bold 14px Arial;
+	font: bold 14px Comic Sans MS center;
 	height: 58px;
 	width: 958px; /*leave this value as is in most cases*/
 }
@@ -32,7 +32,7 @@ height: 40px;
 padding-top: 18px;
 text-decoration: none;
 border-right: 2px solid #000; /*navy divider between menu items*/
-background: url(images/templatemo_menu_bg.jpg) repeat-x;
+/*background: url(images/templatemo_menu_bg.jpg) repeat-x;*/
 outline: none;
 }
 
@@ -52,7 +52,7 @@ background: black url(images/templatemo_menu_hover_bg.jpg) center center;
 .tabcontentstyle{ /*style of tab content oontainer*/
 clear: both;
 width:900px; height: 35px; padding: 23px 30px 0 30px;
-color: #fff;
+color: #0f19df;
 font-size: 14px;
 }
 
@@ -71,7 +71,7 @@ font-size: 14px;
 
 .tabcontentstyle li a {
 	font-weight: normal;
-	color: #FFF;
+	color: #0f19df;
 	margin: 0px;
 	padding: 0 10px 0 5px;
 }

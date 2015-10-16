@@ -12,7 +12,7 @@ body {
 	background: #6d6a6b url(images/templatemo_bg.jpg) repeat;
 }
 
-a:link, a:visited { color: #00a1ff; text-decoration: none; font-weight: bold; } 
+a:link, a:visited { color: #fffff;text-decoration: none; font-weight: bold;}
 a:active, a:hover { color: #00a1ff; text-decoration: underline; }
 
 p {
@@ -49,8 +49,10 @@ img {
 }
 
 #templatemo_wrapper {
+	width: 1310px;
+	height: 645px;
 	margin: 0 auto;
-	background: url(images/templatemo_gradient_bg.jpg) top repeat-x;
+	background: url(images/fondo.jpeg) /*top repeat-x*/;
 }
 
 
@@ -209,12 +211,13 @@ img {
 /* footer */
 #templatemo_footer {
 	clear: both;
-	width: 960px;
-	height: 65px;
-	padding: 15px 0 0 0;
+	width: 950px;
+	height: 50px;
+	padding: 10px/*0 0 0*/;
 	text-align: center;
-	color: #888;
-	background: url(images/templatemo_footer.jpg);
+	/*color: #888*/;
+	color: #000000;
+	background: url(images/base.jpeg);
 }
 
 #templatemo_footer p {
