@@ -11,7 +11,28 @@ from django.forms.formsets import formset_factory
 from GestionPro.apps.sprint.forms import *
 from GestionPro.apps.usuario.models import *
 from GestionPro.apps.sprint.helper import *
+from datetime import datetime, date, time, timedelta
+from dateutil import rrule
 # Create your views here.
+
+def dateTimeViewBootstrap2(request):
+
+    if request.method == 'POST':
+
+        form = SprintForm(request.POST)
+        if form.is_valid():
+            return render(request, 'sprint/crear_sprint.html', {
+                'form': form,'bootstrap':2
+            })
+    else:
+        if request.GET.get('id',None):
+            form = SprintForm(instance=SprintForm.objects.get(id=request.GET.get('id',None)))
+        else:
+            form = SprintForm()
+
+    return render(request, 'sprint/crear_sprint.html', {
+             'form': form,'bootstrap':2
+            })
 
 @login_required
 def admin_sprint(request,proyecto_id):
@@ -100,7 +121,6 @@ def crear_sprint(request, proyecto_id):
     permisos = []
     for i in permisos_obj:
         permisos.append(i.nombre)
-    print permisos
     #-------------------------------------------------------------------
     proyecto = get_object_or_404(Proyecto, id = proyecto_id)
     if proyecto.estado ==  1:
@@ -132,15 +152,37 @@ def visualizar_sprint(request, sprint_id):
     :return: se lista todos los sprint
     """
         sprint = get_object_or_404(Sprint, id=sprint_id)
+        US = UserHistory.objects.filter(sprint = sprint_id)
+        capSem = necesidad = 0
+        sabdom= 5, 6         # si no tienes vacaciones no trabajas sab y dom
+        laborales = [dia for dia in range(7) if dia not in sabdom]
+        totalDias= rrule.rrule(rrule.DAILY, dtstart=sprint.fecha_inicio, until=sprint.fecha_fin,byweekday=laborales)
+        print totalDias.count()
+        duracionSprintDias = totalDias.count()
+        duracionSprintSem = duracionSprintDias / 5
+        # duracionS = abs((sprint.fecha_fin - sprint.fecha_inicio)/5)
+        # duracionSprint = duracionS.days
+        urp = UsuarioRolProyecto.objects.filter(proyecto=sprint.proyecto)
+        for rec in urp:
+            capSem += rec.horas
+        capacidad = capSem * duracionSprintSem
+        for i in US:
+            necesidad += i.tiempo_estimado
         user=  User.objects.get(username=request.user.username)
+        userhistories = UserHistory.objects.filter(proyecto = sprint.proyecto, sprint = sprint)
         permisos = get_permisos_sistema(user)
         lista = User.objects.all().order_by("id")
         ctx = {'lista':lista,
                'sprint':sprint,
+               'userhistories': userhistories,
+               'capacidad' : capacidad,
+               'necesidad' : necesidad,
+               'duracionSprint': duracionSprintSem,
                'ver_sprint': 'ver sprint' in permisos,
                'crear_sprint': 'crear sprint' in permisos,
                'mod_sprint': 'modificar sprint' in permisos,
-               'eliminar_sprint': 'eliminar sprint' in permisos
+               'eliminar_sprint': 'eliminar sprint' in permisos,
+               'ver_user_history': 'ver user history' in permisos
 	          }
 	return render_to_response('sprint/verSprint.html',ctx,context_instance=RequestContext(request))
 
@@ -211,6 +253,6 @@ def borrar_sprint(request, sprint_id):
                                                                             'eliminar_sprint':'eliminar sprint' in permisos
                                                                              })
     return render_to_response("sprint/sprint_confirm_delete.html", {'sprint':actual,
-                                                                  'user':user,
-                                                                  'eliminar_sprint':'eliminar sprint' in permisos
-								})
+                                                                    'user':user,
+                                                                    'eliminar_sprint':'eliminar sprint' in permisos
+                                                                    })

@@ -26,6 +26,7 @@ def index_view(request):
     :param request: contiene la informacion sobre la solicitud de la pagina que lo llamo
     :return: index.html, pagina principal
     """
+
     return render_to_response('home/index.html', context_instance=RequestContext(request))
 
 def login_view(request):
@@ -70,7 +71,7 @@ def recuperarcontrasena_view(request):
             correo = form.cleaned_data['Correo']
             password = generar_nuevo_pass(request,correo)
             contenido = render_to_string('mailing/recuperacion_password.html',{'pass': password})
-            correo = EmailMessage('Restablecimiento de Pass de GestionPro', contenido, to=[form.cleaned_data['Correo']])
+            correo = EmailMessage('Restablecimiento de Pass de SGPA', contenido, to=[form.cleaned_data['Correo']])
             correo.content_subtype = "html"
             correo.send()
             return HttpResponseRedirect('/')

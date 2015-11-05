@@ -1,0 +1,2645 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Models: &mdash; GestionPro 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="GestionPro 1.0 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GestionPro 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="models">
+<h1>Models:<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-GestionPro.apps.usuario.models"></span><dl class="class">
+<dt id="GestionPro.apps.usuario.models.Actividad">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">Actividad</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Esta clase representa las actividades</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Actividad.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Actividad.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">Actividad.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.check">
+<code class="descclassname">Actividad.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.clean">
+<code class="descclassname">Actividad.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.clean_fields">
+<code class="descclassname">Actividad.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.date_error_message">
+<code class="descclassname">Actividad.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.delete">
+<code class="descclassname">Actividad.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.flujoactividad_set">
+<code class="descclassname">Actividad.</code><code class="descname">flujoactividad_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.flujoactividad_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.flujoactividadproyecto_set">
+<code class="descclassname">Actividad.</code><code class="descname">flujoactividadproyecto_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.flujoactividadproyecto_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.full_clean">
+<code class="descclassname">Actividad.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.historia_set">
+<code class="descclassname">Actividad.</code><code class="descname">historia_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.historia_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.objects">
+<code class="descclassname">Actividad.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.pk">
+<code class="descclassname">Actividad.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.prepare_database_save">
+<code class="descclassname">Actividad.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.save">
+<code class="descclassname">Actividad.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.save_base">
+<code class="descclassname">Actividad.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.serializable_value">
+<code class="descclassname">Actividad.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.unique_error_message">
+<code class="descclassname">Actividad.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.userhistory_set">
+<code class="descclassname">Actividad.</code><code class="descname">userhistory_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.userhistory_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Actividad.usuario_creador">
+<code class="descclassname">Actividad.</code><code class="descname">usuario_creador</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.usuario_creador" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Actividad.validate_unique">
+<code class="descclassname">Actividad.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Actividad.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">ArchivosAdjuntos</code><span class="sig-paren">(</span><em>id</em>, <em>userhistory_id</em>, <em>nombre</em>, <em>docfile</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="exception">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">ArchivosAdjuntos.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.check">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.clean">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.clean_fields">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.date_error_message">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.delete">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.full_clean">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.objects">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.pk">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.prepare_database_save">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.save">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.save_base">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.serializable_value">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.unique_error_message">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.userhistory">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">userhistory</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.userhistory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ArchivosAdjuntos.validate_unique">
+<code class="descclassname">ArchivosAdjuntos.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ArchivosAdjuntos.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.Comentarios">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">Comentarios</code><span class="sig-paren">(</span><em>id</em>, <em>asunto</em>, <em>descripcion</em>, <em>userhistory_id</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Comentarios.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Comentarios.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Comentarios.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Comentarios.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Comentarios.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">Comentarios.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Comentarios.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Comentarios.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.check">
+<code class="descclassname">Comentarios.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.clean">
+<code class="descclassname">Comentarios.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.clean_fields">
+<code class="descclassname">Comentarios.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.date_error_message">
+<code class="descclassname">Comentarios.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.delete">
+<code class="descclassname">Comentarios.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.full_clean">
+<code class="descclassname">Comentarios.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Comentarios.objects">
+<code class="descclassname">Comentarios.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Comentarios.pk">
+<code class="descclassname">Comentarios.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.prepare_database_save">
+<code class="descclassname">Comentarios.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.save">
+<code class="descclassname">Comentarios.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.save_base">
+<code class="descclassname">Comentarios.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.serializable_value">
+<code class="descclassname">Comentarios.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.unique_error_message">
+<code class="descclassname">Comentarios.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Comentarios.userhistory">
+<code class="descclassname">Comentarios.</code><code class="descname">userhistory</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.userhistory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Comentarios.validate_unique">
+<code class="descclassname">Comentarios.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Comentarios.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.Flujo">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">Flujo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Esta clase representa el flujo para proyecto</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Flujo.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Flujo.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">Flujo.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.check">
+<code class="descclassname">Flujo.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.clean">
+<code class="descclassname">Flujo.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.clean_fields">
+<code class="descclassname">Flujo.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.date_error_message">
+<code class="descclassname">Flujo.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.delete">
+<code class="descclassname">Flujo.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.flujoactividad_set">
+<code class="descclassname">Flujo.</code><code class="descname">flujoactividad_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.flujoactividad_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.flujoactividadproyecto_set">
+<code class="descclassname">Flujo.</code><code class="descname">flujoactividadproyecto_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.flujoactividadproyecto_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.full_clean">
+<code class="descclassname">Flujo.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.historia_set">
+<code class="descclassname">Flujo.</code><code class="descname">historia_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.historia_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.objects">
+<code class="descclassname">Flujo.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.pk">
+<code class="descclassname">Flujo.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.prepare_database_save">
+<code class="descclassname">Flujo.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.proyecto_set">
+<code class="descclassname">Flujo.</code><code class="descname">proyecto_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.proyecto_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.proyectoflujo_set">
+<code class="descclassname">Flujo.</code><code class="descname">proyectoflujo_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.proyectoflujo_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.save">
+<code class="descclassname">Flujo.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.save_base">
+<code class="descclassname">Flujo.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.serializable_value">
+<code class="descclassname">Flujo.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.unique_error_message">
+<code class="descclassname">Flujo.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.userhistory_set">
+<code class="descclassname">Flujo.</code><code class="descname">userhistory_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.userhistory_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Flujo.usuario_creador">
+<code class="descclassname">Flujo.</code><code class="descname">usuario_creador</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.usuario_creador" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Flujo.validate_unique">
+<code class="descclassname">Flujo.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Flujo.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">FlujoActividad</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que relaciona Flujo con Actividad</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">FlujoActividad.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.actividad">
+<code class="descclassname">FlujoActividad.</code><code class="descname">actividad</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.actividad" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.check">
+<code class="descclassname">FlujoActividad.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.clean">
+<code class="descclassname">FlujoActividad.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.clean_fields">
+<code class="descclassname">FlujoActividad.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.date_error_message">
+<code class="descclassname">FlujoActividad.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.delete">
+<code class="descclassname">FlujoActividad.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.flujo">
+<code class="descclassname">FlujoActividad.</code><code class="descname">flujo</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.flujo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.full_clean">
+<code class="descclassname">FlujoActividad.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.objects">
+<code class="descclassname">FlujoActividad.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.pk">
+<code class="descclassname">FlujoActividad.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.prepare_database_save">
+<code class="descclassname">FlujoActividad.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.save">
+<code class="descclassname">FlujoActividad.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.save_base">
+<code class="descclassname">FlujoActividad.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.serializable_value">
+<code class="descclassname">FlujoActividad.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.unique_error_message">
+<code class="descclassname">FlujoActividad.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividad.validate_unique">
+<code class="descclassname">FlujoActividad.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividad.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">FlujoActividadProyecto</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que relaciona Flujo, Actividad y Proyecto</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">FlujoActividadProyecto.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.actividad">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">actividad</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.actividad" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.check">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.clean">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.clean_fields">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.date_error_message">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.delete">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.flujo">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">flujo</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.flujo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.full_clean">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.objects">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.pk">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.prepare_database_save">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.proyecto">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">proyecto</code><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.proyecto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.save">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.save_base">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.serializable_value">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.unique_error_message">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.FlujoActividadProyecto.validate_unique">
+<code class="descclassname">FlujoActividadProyecto.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.FlujoActividadProyecto.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.Historia">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">Historia</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que representa el Historial de User Storie</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Historia.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Historia.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">Historia.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.actividad">
+<code class="descclassname">Historia.</code><code class="descname">actividad</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.actividad" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.check">
+<code class="descclassname">Historia.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.clean">
+<code class="descclassname">Historia.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.clean_fields">
+<code class="descclassname">Historia.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.date_error_message">
+<code class="descclassname">Historia.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.delete">
+<code class="descclassname">Historia.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.flujo">
+<code class="descclassname">Historia.</code><code class="descname">flujo</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.flujo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.full_clean">
+<code class="descclassname">Historia.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.get_estado_display">
+<code class="descclassname">Historia.</code><code class="descname">get_estado_display</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.get_estado_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.get_estadokanban_display">
+<code class="descclassname">Historia.</code><code class="descname">get_estadokanban_display</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.get_estadokanban_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.objects">
+<code class="descclassname">Historia.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.pk">
+<code class="descclassname">Historia.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.prepare_database_save">
+<code class="descclassname">Historia.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.save">
+<code class="descclassname">Historia.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.save_base">
+<code class="descclassname">Historia.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.serializable_value">
+<code class="descclassname">Historia.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.sprint">
+<code class="descclassname">Historia.</code><code class="descname">sprint</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.sprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.unique_error_message">
+<code class="descclassname">Historia.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.userhistory">
+<code class="descclassname">Historia.</code><code class="descname">userhistory</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.userhistory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Historia.usuario">
+<code class="descclassname">Historia.</code><code class="descname">usuario</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.usuario" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Historia.validate_unique">
+<code class="descclassname">Historia.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Historia.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.Permiso">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">Permiso</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que representa a los Permisos</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Permiso.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Permiso.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Permiso.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Permiso.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Permiso.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">Permiso.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Permiso.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Permiso.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.check">
+<code class="descclassname">Permiso.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.clean">
+<code class="descclassname">Permiso.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.clean_fields">
+<code class="descclassname">Permiso.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.date_error_message">
+<code class="descclassname">Permiso.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.delete">
+<code class="descclassname">Permiso.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.full_clean">
+<code class="descclassname">Permiso.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.get_categoria_display">
+<code class="descclassname">Permiso.</code><code class="descname">get_categoria_display</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.get_categoria_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Permiso.objects">
+<code class="descclassname">Permiso.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Permiso.pk">
+<code class="descclassname">Permiso.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.prepare_database_save">
+<code class="descclassname">Permiso.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Permiso.rol_set">
+<code class="descclassname">Permiso.</code><code class="descname">rol_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.rol_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Permiso.rolpermiso_set">
+<code class="descclassname">Permiso.</code><code class="descname">rolpermiso_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.rolpermiso_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.save">
+<code class="descclassname">Permiso.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.save_base">
+<code class="descclassname">Permiso.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.serializable_value">
+<code class="descclassname">Permiso.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.unique_error_message">
+<code class="descclassname">Permiso.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Permiso.validate_unique">
+<code class="descclassname">Permiso.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Permiso.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.Proyecto">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">Proyecto</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que representa un proyecto.</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Proyecto.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Proyecto.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">Proyecto.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.check">
+<code class="descclassname">Proyecto.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.clean">
+<code class="descclassname">Proyecto.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.clean_fields">
+<code class="descclassname">Proyecto.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.date_error_message">
+<code class="descclassname">Proyecto.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.delete">
+<code class="descclassname">Proyecto.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.flujoactividadproyecto_set">
+<code class="descclassname">Proyecto.</code><code class="descname">flujoactividadproyecto_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.flujoactividadproyecto_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.flujos">
+<code class="descclassname">Proyecto.</code><code class="descname">flujos</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.flujos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.full_clean">
+<code class="descclassname">Proyecto.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.get_estado_display">
+<code class="descclassname">Proyecto.</code><code class="descname">get_estado_display</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.get_estado_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.objects">
+<code class="descclassname">Proyecto.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.pk">
+<code class="descclassname">Proyecto.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.prepare_database_save">
+<code class="descclassname">Proyecto.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.proyectoflujo_set">
+<code class="descclassname">Proyecto.</code><code class="descname">proyectoflujo_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.proyectoflujo_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.save">
+<code class="descclassname">Proyecto.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.save_base">
+<code class="descclassname">Proyecto.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.serializable_value">
+<code class="descclassname">Proyecto.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.sprint_set">
+<code class="descclassname">Proyecto.</code><code class="descname">sprint_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.sprint_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.unique_error_message">
+<code class="descclassname">Proyecto.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.userhistory_set">
+<code class="descclassname">Proyecto.</code><code class="descname">userhistory_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.userhistory_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.usuario_lider">
+<code class="descclassname">Proyecto.</code><code class="descname">usuario_lider</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.usuario_lider" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Proyecto.usuariorolproyecto_set">
+<code class="descclassname">Proyecto.</code><code class="descname">usuariorolproyecto_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.usuariorolproyecto_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Proyecto.validate_unique">
+<code class="descclassname">Proyecto.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Proyecto.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">ProyectoFlujo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que relaciona Proyecto con Flujo</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">ProyectoFlujo.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.check">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.clean">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.clean_fields">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.date_error_message">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.delete">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.flujo">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">flujo</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.flujo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.full_clean">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.objects">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.pk">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.prepare_database_save">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.proyecto">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">proyecto</code><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.proyecto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.save">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.save_base">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.serializable_value">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.unique_error_message">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.ProyectoFlujo.validate_unique">
+<code class="descclassname">ProyectoFlujo.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.ProyectoFlujo.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.Rol">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">Rol</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que representa a los roles</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Rol.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Rol.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">Rol.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.check">
+<code class="descclassname">Rol.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.clean">
+<code class="descclassname">Rol.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.clean_fields">
+<code class="descclassname">Rol.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.date_error_message">
+<code class="descclassname">Rol.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.delete">
+<code class="descclassname">Rol.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.full_clean">
+<code class="descclassname">Rol.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.get_categoria_display">
+<code class="descclassname">Rol.</code><code class="descname">get_categoria_display</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.get_categoria_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.objects">
+<code class="descclassname">Rol.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.permisos">
+<code class="descclassname">Rol.</code><code class="descname">permisos</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.permisos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.pk">
+<code class="descclassname">Rol.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.prepare_database_save">
+<code class="descclassname">Rol.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.rolpermiso_set">
+<code class="descclassname">Rol.</code><code class="descname">rolpermiso_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.rolpermiso_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.save">
+<code class="descclassname">Rol.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.save_base">
+<code class="descclassname">Rol.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.serializable_value">
+<code class="descclassname">Rol.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.unique_error_message">
+<code class="descclassname">Rol.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.usuario_creador">
+<code class="descclassname">Rol.</code><code class="descname">usuario_creador</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.usuario_creador" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.usuariorolproyecto_set">
+<code class="descclassname">Rol.</code><code class="descname">usuariorolproyecto_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.usuariorolproyecto_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Rol.usuariorolsistema_set">
+<code class="descclassname">Rol.</code><code class="descname">usuariorolsistema_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.usuariorolsistema_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Rol.validate_unique">
+<code class="descclassname">Rol.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Rol.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.RolPermiso">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">RolPermiso</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que relaciona Rol con Permiso</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">RolPermiso.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.check">
+<code class="descclassname">RolPermiso.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.clean">
+<code class="descclassname">RolPermiso.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.clean_fields">
+<code class="descclassname">RolPermiso.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.date_error_message">
+<code class="descclassname">RolPermiso.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.delete">
+<code class="descclassname">RolPermiso.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.full_clean">
+<code class="descclassname">RolPermiso.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.objects">
+<code class="descclassname">RolPermiso.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.permiso">
+<code class="descclassname">RolPermiso.</code><code class="descname">permiso</code><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.permiso" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.pk">
+<code class="descclassname">RolPermiso.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.prepare_database_save">
+<code class="descclassname">RolPermiso.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.rol">
+<code class="descclassname">RolPermiso.</code><code class="descname">rol</code><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.rol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.save">
+<code class="descclassname">RolPermiso.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.save_base">
+<code class="descclassname">RolPermiso.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.serializable_value">
+<code class="descclassname">RolPermiso.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.unique_error_message">
+<code class="descclassname">RolPermiso.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.RolPermiso.validate_unique">
+<code class="descclassname">RolPermiso.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.RolPermiso.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.Sprint">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">Sprint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que representa un sprint</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Sprint.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Sprint.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Sprint.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Sprint.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.Sprint.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">Sprint.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Sprint.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Sprint.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.check">
+<code class="descclassname">Sprint.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.clean">
+<code class="descclassname">Sprint.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.clean_fields">
+<code class="descclassname">Sprint.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.date_error_message">
+<code class="descclassname">Sprint.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.delete">
+<code class="descclassname">Sprint.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.full_clean">
+<code class="descclassname">Sprint.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Sprint.historia_set">
+<code class="descclassname">Sprint.</code><code class="descname">historia_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.historia_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Sprint.objects">
+<code class="descclassname">Sprint.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Sprint.pk">
+<code class="descclassname">Sprint.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.prepare_database_save">
+<code class="descclassname">Sprint.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Sprint.proyecto">
+<code class="descclassname">Sprint.</code><code class="descname">proyecto</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.proyecto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.save">
+<code class="descclassname">Sprint.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.save_base">
+<code class="descclassname">Sprint.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.serializable_value">
+<code class="descclassname">Sprint.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.unique_error_message">
+<code class="descclassname">Sprint.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.Sprint.userhistory_set">
+<code class="descclassname">Sprint.</code><code class="descname">userhistory_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.userhistory_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.Sprint.validate_unique">
+<code class="descclassname">Sprint.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.Sprint.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.UserHistory">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">UserHistory</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que representa a un User Storie</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.UserHistory.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.UserHistory.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">UserHistory.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.actividad">
+<code class="descclassname">UserHistory.</code><code class="descname">actividad</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.actividad" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.archivosadjuntos_set">
+<code class="descclassname">UserHistory.</code><code class="descname">archivosadjuntos_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.archivosadjuntos_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.check">
+<code class="descclassname">UserHistory.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.clean">
+<code class="descclassname">UserHistory.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.clean_fields">
+<code class="descclassname">UserHistory.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.comentarios_set">
+<code class="descclassname">UserHistory.</code><code class="descname">comentarios_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.comentarios_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.date_error_message">
+<code class="descclassname">UserHistory.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.delete">
+<code class="descclassname">UserHistory.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.encargado">
+<code class="descclassname">UserHistory.</code><code class="descname">encargado</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.encargado" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.flujo">
+<code class="descclassname">UserHistory.</code><code class="descname">flujo</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.flujo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.full_clean">
+<code class="descclassname">UserHistory.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.get_estado_display">
+<code class="descclassname">UserHistory.</code><code class="descname">get_estado_display</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.get_estado_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.get_estadokanban_display">
+<code class="descclassname">UserHistory.</code><code class="descname">get_estadokanban_display</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.get_estadokanban_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.historia_set">
+<code class="descclassname">UserHistory.</code><code class="descname">historia_set</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.historia_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.objects">
+<code class="descclassname">UserHistory.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.pk">
+<code class="descclassname">UserHistory.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.prepare_database_save">
+<code class="descclassname">UserHistory.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.proyecto">
+<code class="descclassname">UserHistory.</code><code class="descname">proyecto</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.proyecto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.save">
+<code class="descclassname">UserHistory.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.save_base">
+<code class="descclassname">UserHistory.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.serializable_value">
+<code class="descclassname">UserHistory.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UserHistory.sprint">
+<code class="descclassname">UserHistory.</code><code class="descname">sprint</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.sprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.unique_error_message">
+<code class="descclassname">UserHistory.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UserHistory.validate_unique">
+<code class="descclassname">UserHistory.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UserHistory.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">UsuarioRolProyecto</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que relaciona Usuario, Rol y Proyecto</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">UsuarioRolProyecto.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.check">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.clean">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.clean_fields">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.date_error_message">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.delete">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.full_clean">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.objects">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.pk">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.prepare_database_save">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.proyecto">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">proyecto</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.proyecto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.rol">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">rol</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.rol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.save">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.save_base">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.serializable_value">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.unique_error_message">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.usuario">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">usuario</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.usuario" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolProyecto.validate_unique">
+<code class="descclassname">UsuarioRolProyecto.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolProyecto.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema">
+<em class="property">class </em><code class="descclassname">GestionPro.apps.usuario.models.</code><code class="descname">UsuarioRolSistema</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clase que relaciona Usuario, Rol y Sistema</p>
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.DoesNotExist.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.DoesNotExist.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.DoesNotExist.silent_variable_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">UsuarioRolSistema.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.MultipleObjectsReturned.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.MultipleObjectsReturned.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.check">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.clean">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.clean_fields">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.date_error_message">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.date_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.delete">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.full_clean">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.objects">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.pk">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">pk</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.prepare_database_save">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.prepare_database_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.rol">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">rol</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.rol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.save">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.save_base">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.serializable_value">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.unique_error_message">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.unique_error_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.usuario">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">usuario</code><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.usuario" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GestionPro.apps.usuario.models.UsuarioRolSistema.validate_unique">
+<code class="descclassname">UsuarioRolSistema.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GestionPro.apps.usuario.models.UsuarioRolSistema.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/models.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GestionPro 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, sigesproag.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

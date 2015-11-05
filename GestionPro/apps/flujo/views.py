@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import base64
+from wheel.util import utf8
 from django.core.context_processors import csrf
+from django.db.models import Max
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext, Context
 from GestionPro.apps.usuario.forms import UsuariosForm
@@ -130,17 +132,29 @@ def visualizar_flujo(request, flujo_id):
         flujos = get_object_or_404(Flujo, id=flujo_id)
         user=  User.objects.get(username=request.user.username)
         permisos = get_permisos_sistema(user)
-        fluAct = FlujoActividad.objects.filter(flujo = flujo_id)
-        actList = []
+        fluAct = FlujoActividad.objects.filter(flujo = flujo_id).order_by('orden')
+        actList = {}
+        ultActividad = 0
         for rec in fluAct:
-            if not rec.actividad.id in actList:
-                actList.append(rec.actividad.id)
-        print actList
-        actividades = Actividad.objects.filter(Q(id__in = actList))
+            if not actList.has_key(rec.flujo.id):
+                actList[rec.flujo.id] = {}
+            if not actList[rec.flujo.id].has_key(int(rec.orden)):
+                actList[rec.flujo.id][int(rec.orden)] = {}
+            if not actList[rec.flujo.id][int(rec.orden)].has_key(rec.actividad.id):
+                actList[rec.flujo.id][int(rec.orden)][rec.actividad.id] = []
+            act = Actividad.objects.get(nombre = rec.actividad)
+            actList[rec.flujo.id][int(rec.orden)][rec.actividad.id].append(act.nombre)
+            actList[rec.flujo.id][int(rec.orden)][rec.actividad.id].append(act.descripcion)
+            ultActividad = int(rec.orden)
+        if actList:
+            actDict = actList[int(flujo_id)]
+        else:
+            actDict = None
         lista = User.objects.all().order_by("id")
         ctx = {'lista':lista,
                'flujos':flujos,
-               'actividades':actividades,
+               'actividades':actDict,
+               'ultActividad':ultActividad,
                'ver_flujo': 'ver flujo' in permisos,
                'crear_flujo': 'crear flujo' in permisos,
                'mod_flujo': 'modificar flujo' in permisos,
@@ -237,9 +251,15 @@ def asignar_actividades(request, flujo_id):
             for i in lista_actividades:
                 i.delete()
             for i in lista_nueva:
+                famax = FlujoActividad.objects.filter(flujo = flujo).aggregate(Max('orden'))
                 nuevo = FlujoActividad()
                 nuevo.flujo = flujo
                 nuevo.actividad = i
+                print famax
+                if famax['orden__max']:
+                    nuevo.orden = (int(famax['orden__max']) + 1)
+                else:
+                    nuevo.orden = 1
                 nuevo.save()
             return HttpResponseRedirect("/verFlujo/ver&id=" + str(flujo_id))
     else:
@@ -250,4 +270,25 @@ def asignar_actividades(request, flujo_id):
         form = AsignarActividadesForm(initial = {'actividades': dict})
     return render_to_response("flujo/asignar_actividades.html", {'form':form, 'flujo':flujo, 'user':user, 'asignar_actividades': 'asignar actividades' in permisos
                                                                  })
+def subir_actividad(request, flujo_id, actividad_id):
+
+    flujos = get_object_or_404(Flujo, id=flujo_id)
+    actActual = FlujoActividad.objects.get(flujo = flujo_id, actividad = actividad_id)
+    actSig = FlujoActividad.objects.get(flujo = flujo_id, orden = (int(actActual.orden)-1))
+    actActual.orden = int(actActual.orden) - 1
+    actSig.orden = int(actSig.orden) + 1
+    actActual.save()
+    actSig.save()
+    return HttpResponseRedirect("/verFlujo/ver&id=%s/" %flujo_id)
+
+def bajar_actividad(request, flujo_id, actividad_id):
+
+    flujos = get_object_or_404(Flujo, id=flujo_id)
+    actActual = FlujoActividad.objects.get(flujo = flujo_id, actividad = actividad_id)
+    actSig = FlujoActividad.objects.get(flujo = flujo_id, orden = (int(actActual.orden)+1))
+    actActual.orden = int(actActual.orden) + 1
+    actSig.orden = int(actSig.orden) - 1
+    actActual.save()
+    actSig.save()
+    return HttpResponseRedirect("/verFlujo/ver&id=%s/" %flujo_id)
 

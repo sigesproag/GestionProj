@@ -52,7 +52,11 @@ img {
 	width: 1310px;
 	height: 645px;
 	margin: 0 auto;
+<<<<<<< HEAD
+	background: url(images/fondo.jpeg) /*top repeat-x*/;
+=======
 	background: url(images/fondo.jpeg) /*top repeat -x*/;
+>>>>>>> 5d0472e9d60196cb360271b226efd17b68ffd830
 }
 
 

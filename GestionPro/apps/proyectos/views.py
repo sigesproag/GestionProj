@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import base64
 from django.core.context_processors import csrf
+from django.db.models import Max
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext, Context
 from GestionPro.apps.usuario.forms import UsuariosForm
@@ -21,6 +22,23 @@ from GestionPro.apps.proyectos.forms import *
 from GestionPro.apps.proyectos.models import *
 from GestionPro.apps.proyectos.helper import *
 
+def dateTimeViewBootstrap2(request):
+
+    if request.method == 'POST':
+        form = ProyectoForm(request.POST)
+        if form.is_valid():
+            return render_to_response(request, 'sprint/crear_proyecto.html', {
+                'form': form,'bootstrap':2
+            })
+    else:
+        if request.GET.get('id',None):
+            form = ProyectoForm(instance=ProyectoForm.objects.get(id=request.GET.get('id',None)))
+        else:
+            form = ProyectoForm()
+
+    return render_to_response(request, 'sprint/crear_proyecto.html', {
+             'form': form,'bootstrap':2
+            })
 
 @login_required
 def admin_proyectos(request):
@@ -112,6 +130,7 @@ def crear_proyecto(request):
             urp = UsuarioRolProyecto()
             urp.usuario = userLider
             rol = Rol.objects.get(id=2)
+            urp.horas = 0
             urp.rol = rol
             urp.proyecto = proy
             urp.save()
@@ -240,10 +259,11 @@ def asignar_miembro(request, proyecto_id):
             urp.usuario = miembro
             urp.proyecto = proyecto
             urp.rol = rol
+            urp.horas = form.cleaned_data['horas']
             urp.save()
             return HttpResponseRedirect("/verProyecto/ver&id=" + str(proyecto_id))
     else:
-        form = NuevoMiembroForm(proyecto)
+        form = NuevoMiembroForm(proyecto,initial={'horas': 0})
     return render_to_response('proyectos/asignar_miembro.html', {'form': form,
                                                                  'user': user,
                                                                  'proyecto': proyecto,
@@ -278,6 +298,7 @@ def asignar_flujo(request, proyecto_id):
                         fap.proyecto = actual
                         fap.flujo = flujo
                         fap.actividad = act.actividad
+                        fap.orden = act.orden
                         fap.save()
 
 
@@ -384,10 +405,15 @@ def asignar_actividad_proy(request, flujo_id, proyecto_id):
                 i.delete()
             # actual.flujos.clear()
             for i in lista_nueva:
+                fapmax = FlujoActividadProyecto.objects.filter(flujo = flujoactual,proyecto = proyactual).aggregate(Max('orden'))
                 fap = FlujoActividadProyecto()
                 fap.proyecto = proyactual
                 fap.flujo = flujoactual
                 fap.actividad = i
+                if fapmax['orden__max']:
+                    fap.orden = (int(fapmax['orden__max']) + 1)
+                else:
+                    fap.orden = 1
                 fap.save()
         return HttpResponseRedirect("/verProyecto/ver&id=" + str(proyecto_id))
     else:
@@ -399,4 +425,206 @@ def asignar_actividad_proy(request, flujo_id, proyecto_id):
                                                                   'proyecto': proyactual,
                                                                   'flujo': flujoactual,
                                                                   'user':user,
+                                                                  })
+
+def ver_actividades_proyecto(request, flujo_id, proyecto_id):
+    """Visualiza Datos de un Proyecto y muestra las operaciones que puede ejecutar"""
+    proyecto = get_object_or_404(Proyecto, id=proyecto_id)
+    flujo = get_object_or_404(Flujo, id=flujo_id)
+    user = User.objects.get(username=request.user.username)
+    userRolProy = UsuarioRolProyecto.objects.filter(proyecto=proyecto_id)
+    roles = UsuarioRolProyecto.objects.filter(usuario = user, proyecto = proyecto).only('rol')
+    permisos_obj = []
+    for i in roles:
+        permisos_obj.extend(i.rol.permisos.all())
+    permisos = []
+    for i in permisos_obj:
+        permisos.append(i.nombre)
+    fluActProy = FlujoActividadProyecto.objects.filter(flujo = flujo_id, proyecto = proyecto_id).order_by('orden')
+    actList = {}
+    ultActividad = 0
+    for rec in fluActProy:
+        if not actList.has_key(rec.flujo.id):
+            actList[rec.flujo.id] = {}
+        if not actList[rec.flujo.id].has_key(int(rec.orden)):
+            actList[rec.flujo.id][int(rec.orden)] = {}
+        if not actList[rec.flujo.id][int(rec.orden)].has_key(rec.actividad.id):
+            actList[rec.flujo.id][int(rec.orden)][rec.actividad.id] = []
+        act = Actividad.objects.get(nombre = rec.actividad)
+        actList[rec.flujo.id][int(rec.orden)][rec.actividad.id].append(act.nombre)
+        actList[rec.flujo.id][int(rec.orden)][rec.actividad.id].append(act.descripcion)
+        ultActividad = int(rec.orden)
+    if actList:
+        actDict = actList[int(flujo_id)]
+    else:
+        actDict = None
+    lista = User.objects.all().order_by("id")
+    ctx = {'flujo':flujo,
+           'proyecto':proyecto,
+           'actividades':actDict,
+           'ultActividad':ultActividad,
+           'ver_flujo': 'ver flujo' in permisos,
+           'asignar_actividades_proyecto': 'asignar actividades proyecto' in permisos
+       }
+    return render_to_response('proyectos/admin_actividades_proyecto.html', ctx, context_instance=RequestContext(request))
+
+def subir_actividad_proyecto(request, flujo_id, actividad_id, proyecto_id):
+
+    flujos = get_object_or_404(Flujo, id=flujo_id)
+    actActual = FlujoActividadProyecto.objects.get(flujo = flujo_id, actividad = actividad_id)
+    actSig = FlujoActividadProyecto.objects.get(flujo = flujo_id, orden = (int(actActual.orden)-1))
+    actActual.orden = int(actActual.orden) - 1
+    actSig.orden = int(actSig.orden) + 1
+    actActual.save()
+    actSig.save()
+    return HttpResponseRedirect("/verActividadesProy/flujo&id=%s&&proyecto&id=%s/" %(flujo_id,proyecto_id))
+
+def bajar_actividad_proyecto(request, flujo_id, actividad_id, proyecto_id):
+
+    flujos = get_object_or_404(Flujo, id=flujo_id)
+    actActual = FlujoActividadProyecto.objects.get(flujo = flujo_id, actividad = actividad_id)
+    actSig = FlujoActividadProyecto.objects.get(flujo = flujo_id, orden = (int(actActual.orden)+1))
+    actActual.orden = int(actActual.orden) + 1
+    actSig.orden = int(actSig.orden) - 1
+    actActual.save()
+    actSig.save()
+    return HttpResponseRedirect("/verActividadesProy/flujo&id=%s&&proyecto&id=%s/" %(flujo_id,proyecto_id))
+
+@login_required
+def visualizar_kanban(request, flujo_id, proyecto_id):
+    """Metodo para asignar Flujo a Proyecto"""
+    user = User.objects.get(username=request.user.username)
+    proy = Proyecto.objects.get(id = proyecto_id)
+    #Validacion de permisos---------------------------------------------
+    #roles = UsuarioRolProyecto.objects.filter(usuario = user, proyecto = proy).only('rol')
+    #permisos_obj = []
+    #for i in roles:
+    #    permisos_obj.extend(i.rol.permisos.all())
+    #permisos = []
+    #for i in permisos_obj:
+    #    permisos.append(i.nombre)
+    #print permisos
+    #-------------------------------------------------------------------
+    US = UserHistory.objects.filter(proyecto = proyecto_id).order_by('valor_tecnico')
+    print US
+    usExcSprint = UserHistory.objects.filter(proyecto = proyecto_id,sprint = None).order_by('sprint')
+    proyactual = get_object_or_404(Proyecto, id=proyecto_id)
+    flujoactual = get_object_or_404(Flujo, id=flujo_id)
+    actividades = FlujoActividadProyecto.objects.filter(flujo=flujoactual, proyecto =proyactual).order_by('orden')
+    sprints = Sprint.objects.filter(proyecto = proyecto_id).order_by('fecha_inicio')
+    sprintList = []
+    sprintList.append("BACKLOG")
+    for rec in sprints:
+        if not rec.nombre in sprintList:
+            sprintList.append(str(rec.nombre))
+    newList = []
+    for rec in sprintList:
+        newList.append("")
+    # print newList
+    # print sprintList
+    dict = {}
+    for rec in sprints:
+        if not dict.has_key(rec.nombre):
+            dict[rec.nombre] = {}
+    print dict
+    for rec in US:
+        if rec.sprint:
+            sprint = Sprint.objects.get(nombre = rec.sprint)
+            nombre = sprint.nombre
+        else:
+            nombre = "BACKLOG"
+        valor_tecnico = rec.valor_tecnico * -1
+        if not dict.has_key(nombre):
+            dict[nombre] = {}
+        if not dict[nombre].has_key(valor_tecnico):
+            dict[nombre][valor_tecnico] = {}
+        if not dict[nombre][valor_tecnico].has_key(rec.id):
+            dict[nombre][valor_tecnico][rec.id] = []
+            for sp in sprintList:
+                dict[nombre][valor_tecnico][rec.id].append("")
+        # if not dict[rec.sprint.nombre].has_key(rec.nombre):
+        #     dict[rec.sprint.nombre][rec.id] = []
+
+        cont = 0
+        for sp in sprintList:
+            # print sp
+            if sp == nombre:
+                dict[nombre][valor_tecnico][rec.id][cont] = str(rec.nombre)
+            cont += 1
+
+    actList = []
+    actList.append("BACKLOG")
+    for rec in actividades:
+        acti = Actividad.objects.get(nombre = rec.actividad)
+        if not acti.nombre in actList:
+            actList.append(acti.nombre)
+            actList.append(acti.nombre)
+            actList.append(acti.nombre)
+    newList = []
+    for rec in actList:
+        newList.append("")
+    # print newList
+    # print sprintList
+    dictKanban = {}
+    for rec in actividades:
+        acti = Actividad.objects.get(nombre = rec.actividad)
+        if not dictKanban.has_key(acti.nombre):
+            dictKanban[acti.nombre] = {}
+    print dictKanban
+    usFllujo = UserHistory.objects.filter(proyecto = proyecto_id, flujo = flujoactual).order_by('valor_tecnico')
+    for rec in usFllujo:
+        if rec.flujo:
+            acti = Actividad.objects.get(nombre = rec.actividad)
+            nombreAct = acti.nombre
+        else:
+            nombreAct = "BACKLOG"
+        # valor_tecnico = rec.valor_tecnico * -1
+        if not dictKanban.has_key(nombreAct):
+            dictKanban[nombreAct] = {}
+        # if not dict[nombre].has_key(valor_tecnico):
+        #     dict[nombre][valor_tecnico] = {}
+        # if not dictKanban[nombreAct].has_key(rec.estadokanban):
+        #     dictKanban[nombreAct][rec.estadokanban] = {}
+        if not dictKanban[nombreAct].has_key(rec.id):
+            dictKanban[nombreAct][rec.id] = []
+            for act in actList:
+                dictKanban[nombreAct][rec.id].append("")
+        # if not dict[rec.sprint.nombre].has_key(rec.nombre):
+        #     dict[rec.sprint.nombre][rec.id] = []
+
+        cont = 0
+        for act in actList:
+            # print sp
+            if act == nombreAct:
+                if nombreAct == 'BACKLOG':
+                    dictKanban[nombreAct][rec.id][0] = str(rec.nombre)
+                    break
+                if rec.estadokanban == 'to-do':
+                    dictKanban[nombreAct][rec.id][cont] = str(rec.nombre)
+                    break
+                elif rec.estadokanban == 'doing':
+                    dictKanban[nombreAct][rec.id][cont+1] = str(rec.nombre)
+                    break
+                elif rec.estadokanban == 'done':
+                    dictKanban[nombreAct][rec.id][cont+2] = str(rec.nombre)
+                    break
+            cont += 1
+
+
+
+        # dict[nombre].append(rec.nombre)
+        # dict[rec.sprint.id][rec.id].append(rec.sprint.nombre)
+        # actList[rec.flujo.id][int(rec.orden)][rec.actividad.id].append(act.descripcion)
+        # ultActividad = int(rec.orden)
+
+
+    return render_to_response("proyectos/verkanban.html", {
+                                                                  'proyecto': proyactual,
+                                                                  'flujo': flujoactual,
+                                                                  'dict': dict,
+                                                                  'dictKanban': dictKanban,
+                                                                  'user':user,
+                                                                  'US' : US,
+                                                                  'sprint' : sprints,
+                                                                  'actividades': actividades
                                                                   })

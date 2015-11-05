@@ -8,7 +8,6 @@ def user_image(request):
 		up = userProfile.objects.get(user=user)
 		imagen = "/media/%s"%up.photo
 	except:
-		imagen = "/static/menu/images/templatemo_menu_hover_bg.jpg"
 		imagen = "/static/menu/images/user.jpeg"
 	return imagen
 

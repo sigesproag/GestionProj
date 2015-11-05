@@ -114,6 +114,7 @@ class UsuarioRolProyecto(models.Model):
     usuario = models.ForeignKey(User)
     rol = models.ForeignKey(Rol, null=True)
     proyecto = models.ForeignKey(Proyecto)
+    horas = models.IntegerField(null=False)
 
     class Meta:
         unique_together = [("usuario", "rol", "proyecto")]
@@ -146,9 +147,10 @@ class FlujoActividad(models.Model):
     """
     actividad = models.ForeignKey(Actividad)
     flujo = models.ForeignKey(Flujo)
+    orden = models.CharField(max_length=50)
 
     class Meta:
-        unique_together = [("actividad", "flujo")]
+        unique_together = [("actividad", "flujo", "orden")]
 
 class FlujoActividadProyecto(models.Model):
     """
@@ -157,25 +159,32 @@ class FlujoActividadProyecto(models.Model):
     flujo = models.ForeignKey(Flujo)
     actividad = models.ForeignKey(Actividad)
     proyecto = models.ForeignKey(Proyecto)
+    orden = models.CharField(max_length=50)
 
     class Meta:
-        unique_together = [("flujo", "actividad", "proyecto")]
+        unique_together = [("flujo", "actividad", "proyecto", "orden")]
 
-ESTADO_CHOICES=(('to-do','To do'),('doing','Doing'),('done','Done'))
+ESTADO_CHOICES=(('pendiente','Pendiente'),('iniciado','Iniciado'),('en-curso','En Curso'),('cancelado','Cancelado')
+                ,('finalizado','Finalizado'))
+
+ESTADO_KANBAN=(('to-do','To do'),('doing','Doing'),('done','Done'))
 
 class UserHistory(models.Model):
     """
     Clase que representa a un User Storie
     """
     nombre = models.CharField(unique=True, max_length=50)
+    descripcion = models.CharField(max_length=500)
     valor_tecnico = models.IntegerField(null=True)
     valor_negocio = models.IntegerField(null=True)
     prioridad = models.IntegerField(null=True)
     proyecto = models.ForeignKey(Proyecto)
+    encargado = models.ForeignKey(User,null=True)
     flujo = models.ForeignKey(Flujo,null=True)
     actividad = models.ForeignKey(Actividad,null=True)
     sprint = models.ForeignKey(Sprint,null=True)
-    estado = models.CharField(max_length=6, choices=ESTADO_CHOICES)
+    estado = models.CharField(max_length=12, choices=ESTADO_CHOICES)
+    estadokanban = models.CharField(max_length=6, choices=ESTADO_KANBAN)
     tiempo_estimado = models.IntegerField(null=True)
     tiempo_utilizado = models.IntegerField(null=True)
 
@@ -189,6 +198,12 @@ class Historia(models.Model):
     descripcion = models.CharField(max_length=500)
     fecHor_creacion = models.DateTimeField(auto_now=False, auto_now_add=True, null=True, blank=True, editable=False)
     userhistory = models.ForeignKey(UserHistory)
+    usuario = models.ForeignKey(User)
+    estadokanban = models.CharField(max_length=6, choices=ESTADO_KANBAN)
+    estado = models.CharField(max_length=12, choices=ESTADO_CHOICES)
+    sprint = models.ForeignKey(Sprint,null=True)
+    actividad = models.ForeignKey(Actividad,null=True)
+    flujo = models.ForeignKey(Flujo,null=True)
 
     def __unicode__(self):
         return self.descripcion

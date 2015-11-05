@@ -11,6 +11,8 @@ from django.forms.formsets import formset_factory
 from GestionPro.apps.userhistory.forms import *
 from GestionPro.apps.flujo.models import *
 from GestionPro.apps.userhistory.helper import *
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
 # Create your views here.
 
 @login_required
@@ -21,8 +23,9 @@ def admin_user_history(request,proyecto_id):
     :return: admin_user_history.html, pagina en la cual se trabaja con los user history
     """
     user = User.objects.get(username=request.user.username)
+    proyecto = get_object_or_404(Proyecto, id=proyecto_id)
     #Validacion de permisos---------------------------------------------
-    roles = UsuarioRolSistema.objects.filter(usuario = user).only('rol')
+    roles = UsuarioRolProyecto.objects.filter(usuario = user, proyecto = proyecto).only('rol')
     permisos_obj = []
     for i in roles:
         permisos_obj.extend(i.rol.permisos.all())
@@ -33,7 +36,7 @@ def admin_user_history(request,proyecto_id):
     #-------------------------------------------------------------------
     userRolProy = UsuarioRolProyecto.objects.filter(proyecto=proyecto_id)
     lista = UserHistory.objects.filter(proyecto=proyecto_id)
-    proyecto = get_object_or_404(Proyecto, id=proyecto_id)
+
     if request.method == 'POST':
         form = FilterForm(request.POST)
         if form.is_valid():
@@ -56,7 +59,8 @@ def admin_user_history(request,proyecto_id):
                                                         'proyecto':proyecto,
                                                         'pag': pag,
                                                         'ver_user_history':'ver user history' in permisos,
-							'crear_user_history':'crear user history' in permisos
+                                                        'ver_log_userhistory':'ver log user history' in permisos,
+							                            'crear_user_history':'crear user history' in permisos
                                                         })
     else:
         try:
@@ -75,10 +79,11 @@ def admin_user_history(request,proyecto_id):
     return render_to_response('userhistory/admin_user_history.html',{'lista':lista, 'form':form,
                                                             'user':user,
                                                             'proyecto':proyecto,
-							    'pag': pag,
+                                                            'pag': pag,
                                                             'ver_user_history':'ver user history' in permisos,
-							    'crear_user_history':'crear user history' in permisos
-							})
+                                                            'ver_log_userhistory':'ver log user history' in permisos,
+                                                            'crear_user_history':'crear user history' in permisos
+                                                            })
 
 
 @login_required
@@ -90,8 +95,9 @@ def crear_user_history(request,proyecto_id):
     :return:crear_userhistory.html, pagina en la cual se crea los user history
     """
     user = User.objects.get(username=request.user.username)
+    proyecto = get_object_or_404(Proyecto, id=proyecto_id)
     #Validacion de permisos---------------------------------------------
-    roles = UsuarioRolSistema.objects.filter(usuario = user).only('rol')
+    roles = UsuarioRolProyecto.objects.filter(usuario = user,proyecto = proyecto).only('rol')
     permisos_obj = []
     for i in roles:
         permisos_obj.extend(i.rol.permisos.all())
@@ -100,20 +106,30 @@ def crear_user_history(request,proyecto_id):
         permisos.append(i.nombre)
 
     #-------------------------------------------------------------------
-    proyecto = get_object_or_404(Proyecto, id=proyecto_id)
+
     if request.method == 'POST':
-        form = UserHistoryForm(request.POST)
+        form = UserHistoryForm(proyecto_id, request.POST)
         if form.is_valid():
             r = UserHistory()
             r.nombre = form.cleaned_data['nombre']
+            r.descripcion = form.cleaned_data['descripcion']
             r.estado = form.cleaned_data['estado']
+            r.valor_negocio = form.cleaned_data['valor_negocio']
+            r.valor_tecnico = form.cleaned_data['valor_tecnico']
             r.tiempo_estimado = form.cleaned_data['tiempo_estimado']
+            # r.encargado =  User.objects.get(username=form.cleaned_data['encargado'])
+            # r.flujo = Flujo.objects.get(nombre=form.cleaned_data['flujo'])
+            # fap = FlujoActividadProyecto.objects.get(flujo = r.flujo, proyecto = proyecto, orden = 1)
+            # r.actividad = fap.actividad
+            # r.estadokanban = 'To do'
+            # r.sprint = Sprint.objects.get(nombre=form.cleaned_data['sprint'])
             r.proyecto = proyecto
             r.save()
+            registrar_log(r,"Creacion",user)
             return HttpResponseRedirect("/userHistory/proyecto&id=" + str(proyecto_id))
 
     else:
-        form = UserHistoryForm()
+        form = UserHistoryForm(proyecto_id)
     return render_to_response('userhistory/crear_userhistory.html',{'form':form,
                                                             'user':user,
                                                             'proyecto':proyecto,
@@ -128,16 +144,33 @@ def visualizar_user_history(request, userhistory_id):
     :param userhistory_id: id del user history con el que se trabajara
     :return:verUserHistory.html, pagina en la cual se visualiza los user history
     """
-    flujos = get_object_or_404(UserHistory, id=userhistory_id)
-    user=  User.objects.get(username=request.user.username)
-    permisos = get_permisos_sistema(user)
+    userHist = get_object_or_404(UserHistory, id=userhistory_id)
+    user =  User.objects.get(username=request.user.username)
+    proyecto = get_object_or_404(Proyecto, id=userHist.proyecto.id)
+    #Validacion de permisos---------------------------------------------
+    roles = UsuarioRolProyecto.objects.filter(usuario = user,proyecto = proyecto).only('rol')
+    comments = Comentarios.objects.filter(userhistory = userHist)
+    adjuntos = ArchivosAdjuntos.objects.filter(userhistory = userHist)
+    permisos_obj = []
+    for i in roles:
+        permisos_obj.extend(i.rol.permisos.all())
+    permisos = []
+    for i in permisos_obj:
+        permisos.append(i.nombre)
+
     lista = User.objects.all().order_by("id")
     ctx = {'lista':lista,
-            'flujos':flujos,
+            'userhistory':userHist,
+            'comments':comments,
+            'adjuntos': adjuntos,
             'ver_user_history': 'ver user history' in permisos,
             'crear_user_history': 'crear user history' in permisos,
             'mod_user_history': 'modificar user history' in permisos,
-            'eliminar_user_history': 'eliminar user history' in permisos
+            'eliminar_user_history': 'eliminar user history' in permisos,
+            'add_comment': 'agregar comentario' in permisos,
+            'asignar_encargado': 'asignar encargado' in permisos,
+            'asignar_sprint': 'asignar sprint a us' in permisos,
+            'asignar_flujo': 'asignar flujo a us' in permisos
 	       }
     return render_to_response('userhistory/verUserHistory.html',ctx,context_instance=RequestContext(request))
 
@@ -149,8 +182,10 @@ def mod_user_history(request, userhistory_id):
     :return: mod_user_history.html,pagina en la cual se modificara el User History
     """
     user = User.objects.get(username=request.user.username)
+    actual = get_object_or_404(UserHistory, id=userhistory_id)
+    proyecto = Proyecto.objects.get(nombrelargo = actual.proyecto)
     #Validacion de permisos---------------------------------------------
-    roles = UsuarioRolSistema.objects.filter(usuario = user).only('rol')
+    roles = UsuarioRolProyecto.objects.filter(usuario = user,proyecto = proyecto).only('rol')
     permisos_obj = []
     for i in roles:
        permisos_obj.extend(i.rol.permisos.all())
@@ -159,18 +194,40 @@ def mod_user_history(request, userhistory_id):
        permisos.append(i.nombre)
 
     #-------------------------------------------------------------------
-    actual = get_object_or_404(UserHistory, id=userhistory_id)
+
     if request.method == 'POST':
-        form = ModUserHistoryForm(request.POST)
+        form = ModUserHistoryForm(proyecto.id, request.POST)
         if form.is_valid():
+            actual.descripcion = form.cleaned_data['descripcion']
             actual.estado = form.cleaned_data['estado']
             actual.tiempo_estimado = form.cleaned_data['tiempo_estimado']
+            actual.valor_tecnico = form.cleaned_data['valor_tecnico']
+            actual.valor_negocio = form.cleaned_data['valor_negocio']
+            # actual.encargado =  User.objects.get(username=form.cleaned_data['encargado'])
+            # actual.flujo = Flujo.objects.get(nombre=form.cleaned_data['flujo'])
+            # actual.sprint = Sprint.objects.get(nombre=form.cleaned_data['sprint'])
             actual.save()
+            registrar_log(actual,"Modificacion",user)
+             #---Enviar Correo----#
+            if actual.encargado != None:
+                contenido = render_to_string('mailing/modificar_userstorie.html',{'ustorie':actual.nombre,
+                                         'owner':user.first_name,'proyecto':proyecto.nombrelargo,
+                                         'estado':actual.estado})
+                correo = EmailMessage('Notificacion de SGPA', contenido, to=[actual.encargado.email])
+                correo.content_subtype = "html"
+                correo.send()
+            #-------------------#
             return HttpResponseRedirect("/verUserHistory/ver&id=" + str(userhistory_id))
     else:
-        form = ModUserHistoryForm()
+        form = ModUserHistoryForm(proyecto.id)
+        form.fields['descripcion'].initial = actual.descripcion
         form.fields['estado'].initial = actual.estado
         form.fields['tiempo_estimado'].initial = actual.tiempo_estimado
+        form.fields['valor_tecnico'].initial = actual.valor_tecnico
+        form.fields['valor_negocio'].initial = actual.valor_negocio
+        # form.fields['encargado'].initial = actual.encargado
+        # form.fields['flujo'].initial = actual.flujo
+        # form.fields['sprint'].initial = actual.sprint
     return render_to_response("userhistory/mod_user_history.html", {'user':user,
                                                            'form':form,
 							   'flujo': actual,
@@ -185,8 +242,10 @@ def borrar_user_history(request, userhistory_id):
     :return: user_history_confirm_delete.html, pagina en la cual se elimina el user history
     """
     user = User.objects.get(username=request.user.username)
+    actual = get_object_or_404(UserHistory, id=userhistory_id)
+    proyecto = Proyecto.objects.get(nombrelargo = actual.proyecto)
     #Validacion de permisos---------------------------------------------
-    roles = UsuarioRolSistema.objects.filter(usuario = user).only('rol')
+    roles = UsuarioRolProyecto.objects.filter(usuario = user, proyecto = proyecto).only('rol')
     permisos_obj = []
     for i in roles:
        permisos_obj.extend(i.rol.permisos.all())
@@ -195,8 +254,6 @@ def borrar_user_history(request, userhistory_id):
        permisos.append(i.nombre)
 
     #-------------------------------------------------------------------
-    actual = get_object_or_404(UserHistory, id=userhistory_id)
-
     if request.method == 'POST':
         actual.delete()
         return HttpResponseRedirect("/userHistory/proyecto&id=" + str(actual.proyecto_id))
@@ -211,3 +268,338 @@ def borrar_user_history(request, userhistory_id):
                                                                       'user':user,
                                                                       'eliminar_user_history':'eliminar user history' in permisos
 								})
+
+def ver_log_user_history(request, userhistory_id):
+    """
+    Metodo para ver Historial del User Storie
+    :param request: contiene la informacion sobre la solicitud de la pagina que lo llamo
+    :param userhistory_id: id del user history del cual se desea guardar el historial
+    :return: log_user:history.html, pagina en la cual se visualiza el historial
+    """
+    userHist = get_object_or_404(UserHistory, id=userhistory_id)
+    user =  User.objects.get(username=request.user.username)
+    roles = UsuarioRolProyecto.objects.filter(usuario = user, proyecto = userHist.proyecto).only('rol')
+    permisos_obj = []
+    for i in roles:
+        permisos_obj.extend(i.rol.permisos.all())
+    permisos = []
+    for i in permisos_obj:
+        permisos.append(i.nombre)
+    historial = Historia.objects.filter(userhistory = userHist).order_by("fecHor_creacion")
+    ctx = {'historial':historial,
+            'proyecto':userHist.proyecto,
+            'userHist':userHist,
+            'ver_log_userhistory': 'ver log user history' in permisos
+	       }
+    return render_to_response('userhistory/log_user_history.html',ctx,context_instance=RequestContext(request))
+
+@login_required
+def agregar_comentario(request, userhistory_id):
+    """
+    Metodo para agregar comentario al User Storie
+    :param request: contiene la informacion sobre la solicitud de la pagina que lo llamo
+    :param userhistory_id:  id del user history en la cual se desea agregar el comentario
+    :return: add_comment.html, pagina en la cual se guarda el comentario
+    """
+    user = User.objects.get(username=request.user.username)
+    us = get_object_or_404( UserHistory, id = userhistory_id)
+    proyecto = Proyecto.objects.get(nombrelargo = us.proyecto)
+    #Validacion de permisos---------------------------------------------
+    roles = UsuarioRolProyecto.objects.filter(usuario = user, proyecto = proyecto).only('rol')
+    permisos_obj = []
+    for i in roles:
+        permisos_obj.extend(i.rol.permisos.all())
+    permisos = []
+    for i in permisos_obj:
+        permisos.append(i.nombre)
+    print permisos
+    #-------------------------------------------------------------------
+    if request.method == 'POST':
+        form = AddCommentForm(us, request.POST, request.FILES)
+        if form.is_valid():
+            comment = Comentarios()
+            comment.asunto = form.cleaned_data['asunto']
+            comment.descripcion = form.cleaned_data['descripcion']
+            comment.userhistory = us
+            comment.save()
+            registrar_log(us,"Comentario ({Asunto: "+comment.asunto+"} {Descripcion: "+comment.descripcion+"})",user)
+            #---Enviar Correo----#
+            if us.encargado != None:
+                contenido = render_to_string('mailing/agregar_comentario.html',{'ustorie': us.nombre,
+                                         'owner':user.first_name,'proyecto':proyecto.nombrelargo,
+                                         'comentario':comment.descripcion})
+                correo = EmailMessage('Notificacion de SGPA', contenido, to=[us.encargado.email])
+                correo.content_subtype = "html"
+                correo.send()
+            #-------------------#
+            return HttpResponseRedirect("/verUserHistory/ver&id=" + str(userhistory_id))
+    else:
+        form = AddCommentForm(us)
+
+    return render_to_response('userhistory/add_comment.html',{'form':form,
+                                                        'user':user,
+                                                        'userhistory': us,
+                                                        'add_comment':'agregar comentario' in permisos
+                                                         })
+
+def asignar_encargado_userhistory(request, userhistory_id):
+    """
+    Metodo en el cual se asigna encargado al User History
+    :param request: contiene la informacion sobre la solicitud de la pagina que lo llamo
+    :param userhistory_id: userhistory_id:  id del user history al cual se asignara un encargado
+    :return: asignar_encargado.html, pagina en la cual se asigna el encargado
+    """
+    user = User.objects.get(username=request.user.username)
+    actual = get_object_or_404(UserHistory, id=userhistory_id)
+    proyecto = Proyecto.objects.get(nombrelargo = actual.proyecto)
+    #Validacion de permisos---------------------------------------------
+    roles = UsuarioRolProyecto.objects.filter(usuario = user,proyecto = proyecto).only('rol')
+    permisos_obj = []
+    for i in roles:
+       permisos_obj.extend(i.rol.permisos.all())
+    permisos = []
+    for i in permisos_obj:
+       permisos.append(i.nombre)
+
+    #-------------------------------------------------------------------
+
+    if request.method == 'POST':
+        form = AsignarEncargadoUSForm(proyecto.id, request.POST)
+        if form.is_valid():
+            userEncargado = form.cleaned_data['encargado']
+            actual.encargado = User.objects.get(username = userEncargado)
+            actual.save()
+            registrar_log(actual,"Asignacion de Encargado: "+actual.encargado.username,user)
+            #---Enviar Correo----#
+            if actual.encargado !=None:
+                contenido = render_to_string('mailing/asignar_userstory.html',{'ustorie': actual.nombre,
+                                         'owner':user.first_name,'proyecto':proyecto.nombrelargo})
+                correo = EmailMessage('Notificacion de SGPA', contenido, to=[actual.encargado.email])
+                correo.content_subtype = "html"
+                correo.send()
+            #-------------------#
+            return HttpResponseRedirect("/verUserHistory/ver&id=" + str(userhistory_id))
+    else:
+        form = AsignarEncargadoUSForm(proyecto.id)
+        form.fields['encargado'].initial = actual.encargado
+    return render_to_response("userhistory/asignar_encargado.html", {'user':user,
+                                                                     'form':form,
+                                                                     'userhistory': actual,
+                                                                     'asignar_encargado':'asignar encargado' in permisos
+						     })
+
+def asignar_sprint_userhistory(request, userhistory_id):
+    """
+    Metodo en el cual se asigna el User History a un Sprint
+    :param request: contiene la informacion sobre la solicitud de la pagina que lo llamo
+    :param userhistory_id: id del User History que sera asignado al Sprint
+    :return: asignar_sprint.html, pagina en la cual se asigna el user history al sprint
+    """
+    user = User.objects.get(username=request.user.username)
+    actual = get_object_or_404(UserHistory, id=userhistory_id)
+    proyecto = Proyecto.objects.get(nombrelargo = actual.proyecto)
+    #Validacion de permisos---------------------------------------------
+    roles = UsuarioRolProyecto.objects.filter(usuario = user,proyecto = proyecto).only('rol')
+    permisos_obj = []
+    for i in roles:
+       permisos_obj.extend(i.rol.permisos.all())
+    permisos = []
+    for i in permisos_obj:
+       permisos.append(i.nombre)
+
+    #-------------------------------------------------------------------
+
+    if request.method == 'POST':
+        form = AsignarSprintUSForm(proyecto.id, request.POST)
+        if form.is_valid():
+            sprint = form.cleaned_data['sprint']
+            actual.sprint = Sprint.objects.get(nombre = sprint)
+            actual.estado = "iniciado"
+            actual.save()
+            registrar_log(actual,"Asignacion de Sprint: "+actual.sprint.nombre,user)
+             #---Enviar Correo----#
+            if actual.encargado != None:
+                contenido = render_to_string('mailing/asignar_sprint.html',{'ustorie': actual.nombre,
+                                         'owner':user.first_name,'proyecto':proyecto.nombrelargo,
+                                         'sprint':sprint})
+                correo = EmailMessage('Notificacion de SGPA', contenido, to=[actual.encargado.email])
+                correo.content_subtype = "html"
+                correo.send()
+            #-------------------#
+            return HttpResponseRedirect("/verUserHistory/ver&id=" + str(userhistory_id))
+    else:
+        form = AsignarSprintUSForm(proyecto.id)
+        form.fields['sprint'].initial = actual.sprint
+    return render_to_response("userhistory/asignar_sprint.html", {'user':user,
+                                                                     'form':form,
+                                                                     'userhistory': actual,
+                                                                     'asignar_sprint':'asignar sprint a us' in permisos
+                                                                     })
+
+def asignar_flujo_userhistory(request, userhistory_id):
+    """
+    Metodo en el cual se asigna el user history al Flujo
+    :param request: contiene la informacion sobre la solicitud de la pagina que lo llamo
+    :param userhistory_id: id del User History que sera asignado al Flujo
+    :return: asignar_flujo.html, pagina en la cual se asigna el user history al Flujo
+    """
+    user = User.objects.get(username=request.user.username)
+    actual = get_object_or_404(UserHistory, id=userhistory_id)
+    proyecto = Proyecto.objects.get(nombrelargo = actual.proyecto)
+    #Validacion de permisos---------------------------------------------
+    roles = UsuarioRolProyecto.objects.filter(usuario = user,proyecto = proyecto).only('rol')
+    permisos_obj = []
+    for i in roles:
+       permisos_obj.extend(i.rol.permisos.all())
+    permisos = []
+    for i in permisos_obj:
+       permisos.append(i.nombre)
+
+    #-------------------------------------------------------------------
+
+    if request.method == 'POST':
+        form = AsignarFlujoUSForm(proyecto.id, request.POST)
+        if form.is_valid():
+            flujo = form.cleaned_data['flujo']
+            actual.flujo = Flujo.objects.get(nombre = flujo)
+            fap = FlujoActividadProyecto.objects.get(flujo = actual.flujo, proyecto = proyecto, orden = 1)
+            actual.actividad = fap.actividad
+            actual.estadokanban = 'to-do'
+            actual.save()
+            registrar_log(actual,"Asignacion de Flujo: "+actual.flujo.nombre,user)
+             #---Enviar Correo----#
+            if actual.encargado != None:
+                contenido = render_to_string('mailing/asignar_flujo.html',{'ustorie': actual.nombre,
+                                         'owner':user.first_name,'proyecto':proyecto.nombrelargo,
+                                         'flujo':flujo})
+                correo = EmailMessage('Notificacion de SGPA', contenido, to=[actual.encargado.email])
+                correo.content_subtype = "html"
+                correo.send()
+            #-------------------#
+            return HttpResponseRedirect("/verUserHistory/ver&id=" + str(userhistory_id))
+    else:
+        form = AsignarFlujoUSForm(proyecto.id)
+        form.fields['flujo'].initial = actual.flujo
+    return render_to_response("userhistory/asignar_flujo.html", {'user':user,
+                                                                     'form':form,
+                                                                     'userhistory': actual,
+                                                                     'asignar_flujo':'asignar flujo a us' in permisos
+						     })
+
+def archivos_adjuntos(request, userhistory_id):
+    """
+    Metodo en el cual se adjuntan archivos al User History
+    :param request: contiene la informacion sobre la solicitud de la pagina que lo llamo
+    :param userhistory_id: id del user history al cual se le adjunta el archivo
+    :return: archivos_adjuntos.html, pagina en el cualse adjunta archivo
+    """
+    user = User.objects.get(username=request.user.username)
+    us = get_object_or_404( UserHistory, id = userhistory_id)
+    proyecto = Proyecto.objects.get(nombrelargo = us.proyecto)
+    #Validacion de permisos---------------------------------------------
+    roles = UsuarioRolProyecto.objects.filter(usuario = user, proyecto = proyecto).only('rol')
+    permisos_obj = []
+    for i in roles:
+        permisos_obj.extend(i.rol.permisos.all())
+    permisos = []
+    for i in permisos_obj:
+        permisos.append(i.nombre)
+    print permisos
+    #-------------------------------------------------------------------
+    if request.method == 'POST':
+        form = ArchivosAdjuntosForm(us,request.POST, request.FILES)
+        if form.is_valid():
+            newdoc = ArchivosAdjuntos(nombre = request.POST['nombre'],docfile = request.FILES['docfile'], userhistory = us)
+            newdoc.save(form)
+            registrar_log(us,"Archivo Adjunto (Nombre: "+newdoc.nombre+")",user)
+        return HttpResponseRedirect("/verUserHistory/ver&id=" + str(userhistory_id))
+    else:
+        form = ArchivosAdjuntosForm(us)
+    return render(request, 'userhistory/archivos_adjuntos.html', {'form': form, 'user':user, 'userhistory':us, 'adjuntar_archivos':'adjuntar archivos' in permisos})
+
+def cambiar_estados(request, userhistory_id):
+    """
+    Metodo en el cual se cambia de estado kanban al us
+    :param request: contiene la informacion sobre la solicitud de la pagina que lo llamo
+    :param userhistory_id: id del User History que sera cambiado de estado
+    :return: cambiar_estados.html, pagina en la cual se cambia de estado al user history
+    """
+    user = User.objects.get(username=request.user.username)
+    actual = get_object_or_404(UserHistory, id=userhistory_id)
+    proyecto = Proyecto.objects.get(nombrelargo = actual.proyecto)
+    #Validacion de permisos---------------------------------------------
+    roles = UsuarioRolProyecto.objects.filter(usuario = user,proyecto = proyecto).only('rol')
+    permisos_obj = []
+    for i in roles:
+       permisos_obj.extend(i.rol.permisos.all())
+    permisos = []
+    for i in permisos_obj:
+       permisos.append(i.nombre)
+
+    #-------------------------------------------------------------------
+
+    if request.method == 'POST':
+        form = CambiarEstadosUSForm(request.POST)
+        if form.is_valid():
+            actual.estadokanban =form.cleaned_data['estadokanban']
+            actual.save()
+            registrar_log(actual,"Cambio de Estado: "+actual.estadokanban,user )
+            return HttpResponseRedirect("/verUserHistory/ver&id=" + str(userhistory_id))
+    else:
+        form = CambiarEstadosUSForm()
+        form.fields['estadokanban'].initial = actual.estadokanban
+    return render_to_response("userhistory/cambiar_estados.html", {'user':user,
+                                                                     'form':form,
+                                                                     'userhistory': actual,
+                                                                     'asignar_encargado':'asignar encargado' in permisos
+						     })
+
+
+def cambiar_actividad(request, userhistory_id):
+    """
+    Metodo en el cual se cambia de actividad al us
+    :param request: contiene la informacion sobre la solicitud de la pagina que lo llamo
+    :param userhistory_id: id del User History que sera cambiado de actividad
+    :return: cambiar_actividad.html, pagina en la cual se cambia de actividad al user history
+    """
+    user = User.objects.get(username=request.user.username)
+    actual = get_object_or_404(UserHistory, id=userhistory_id)
+    proyecto = Proyecto.objects.get(nombrelargo = actual.proyecto)
+    userhistory = UserHistory.objects.get(id = userhistory_id)
+    #Validacion de permisos---------------------------------------------
+    roles = UsuarioRolProyecto.objects.filter(usuario = user,proyecto = proyecto).only('rol')
+    permisos_obj = []
+    for i in roles:
+       permisos_obj.extend(i.rol.permisos.all())
+    permisos = []
+    for i in permisos_obj:
+       permisos.append(i.nombre)
+
+    #-------------------------------------------------------------------
+
+    if request.method == 'POST':
+        form = CambiarActividadUSForm(userhistory.id, request.POST)
+        if form.is_valid():
+            actividad = form.cleaned_data['actividad']
+            actual.actividad = Actividad.objects.get(nombre = actividad)
+            actual.estadokanban = "to-do"
+            actual.save()
+            registrar_log(actual,"Cambio de Actividad: "+actual.actividad.nombre,user)
+             #---Enviar Correo----#
+            if actual.encargado != None:
+                contenido = render_to_string('mailing/asignar_flujo.html',{'ustorie': actual.nombre,
+                                         'owner':user.first_name,'proyecto':proyecto.nombrelargo,
+                                         'actividad':actividad})
+                correo = EmailMessage('Notificacion de SGPA', contenido, to=[actual.encargado.email])
+                correo.content_subtype = "html"
+                correo.send()
+            #-------------------#
+            return HttpResponseRedirect("/verUserHistory/ver&id=" + str(userhistory_id))
+    else:
+        form = CambiarActividadUSForm(userhistory.id)
+        form.fields['actividad'].initial = actual.actividad
+    return render_to_response("userhistory/cambiar_actividad.html", {'user':user,
+                                                                     'form':form,
+                                                                     'userhistory': actual,
+                                                                     'asignar_flujo':'asignar flujo a us' in permisos
+						     })
