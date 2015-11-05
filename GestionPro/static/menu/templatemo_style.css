@@ -49,14 +49,14 @@ img {
 }
 
 #templatemo_wrapper {
-	width: 1310px;
-	height: 645px;
+	/*width: 1310px;
+	height: 630;
 	margin: 0 auto;
-<<<<<<< HEAD
+<<<<<<< HEAD*/
 	background: url(images/fondo.jpeg) /*top repeat-x*/;
-=======
-	background: url(images/fondo.jpeg) /*top repeat -x*/;
->>>>>>> 5d0472e9d60196cb360271b226efd17b68ffd830
+/*=======
+	background: url(images/fondo.jpeg) /*top repeat -x;
+>>>>>>> 5d0472e9d60196cb360271b226efd17b68ffd830*/
 }
 
 
